@@ -38,7 +38,7 @@ if (isset($_POST['forminscription']))
                         $question,
                         $reponse,
                     ));
-                    $erreur = "Votre compte a bien été créé !";
+                    $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
                 }
 
                 else
@@ -78,6 +78,7 @@ if (isset($_POST['forminscription']))
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css" />
             <title>Inscription</title>
         </head>
 

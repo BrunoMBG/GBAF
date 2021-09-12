@@ -1,0 +1,24 @@
+/*----------------------------------------------------------------------------------------CONNEXION----------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+#headerconnexion{
+    text-align: center;
+    background-color: pink;
+   
+}
+#headerconnexion img{
+    height: 200px;
+}
+
+#headerconnexion p{
+    font-size: 20px;
+padding-bottom: 15px;
+border-bottom: 1px solid black;
+}
+
+#formulaireconnexion{
+    text-align: center;
+    padding-top: 50px;
+}
