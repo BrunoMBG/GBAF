@@ -1,6 +1,6 @@
 <?php
-session_start();
-$_SESSION = array();
-session_destroy();
-header("Location: connexion.php");
+session_start(); // COMMENCER LA SESSION
+$_SESSION = array(); // VIDER TOUTES LES VARIABLES DE SESSION
+session_destroy(); //DÉTRUIRE TOUTES LES DONNÉES
+header("Location: connexion.php"); //REDIRIGER L'UTILISATEUR VERS UNE AUTRE PAGE
 ?>

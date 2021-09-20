@@ -1,38 +1,8 @@
+ <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
 <?php
-session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=espace_membre', 'root', 'root');
-
-if(isset($_POST['formconnexion']))
-{
-    $utilisateurconnexion = htmlspecialchars($_POST['utilisateurconnexion']);
-    $mdpconnexion = sha1($_POST['mdpconnexion']);
-    if(!empty($utilisateurconnexion) AND !empty($mdpconnexion))
-    {
-        $requser = $bdd->prepare("SELECT * FROM inscription WHERE nomutilisateur = ? AND motdepasse = ?");
-        $requser->execute(array($utilisateurconnexion, $mdpconnexion));
-        $userexist = $requser->rowCount();
-        if($userexist == 1)
-        {
-            $userinfo = $requser->fetch();
-            $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['nom'] = $userinfo['nom'];
-            $_SESSION['prenom'] = $userinfo['prenom'];
-            $_SESSION['nomutilisateur'] = $userinfo['nomutilisateur'];
-            $_SESSION['motdepasse'] = $userinfo['motdepasse'];
-            $_SESSION['question'] = $userinfo['question'];
-            $_SESSION['reponse'] = $userinfo['reponse'];
-            header("Location: profil.php?id=".$_SESSION['id']);
-        }
-        else
-        {
-            $erreur = "Mot de passe ou nom d'utilisateur incorrect !";
-        }
-    }
-    else
-    {
-        $erreur ="Tous les champs doivent être complétés !";
-    }
-}
+     include 'gestionserveur/connexion-base-donnees.php';
+     include 'gestionserveur/gestion-connexion-utilisateur.php';
+     
 ?>
 
 <!DOCTYPE html>
@@ -47,43 +17,54 @@ if(isset($_POST['formconnexion']))
         </head>
 
         <body>
-            <header id="headerconnexion">
-                <img src="Images/logo_gbaf.png">
-                <p>
-                    Le Groupement Banque Assurance Français
-                </p>
+ <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+            <header class="header">
+                  
+                 <a href="connexion.php"><img src="Images/logo_gbaf.png"></a>
+               
+                
             </header>   
-
-            <div id="formulaireconnexion">
-            <h2>Connectez-vous</h2>
-
-            <form method="POST" action="">
-            <label> Nom d'utilisateur</label></br>
-           <input type ="text" name ="utilisateurconnexion" /> </br>
-
-           <label> Mot de passe</label></br>
-           <input type ="password" name ="mdpconnexion" /> </br>
-           <input type ="submit" name ="formconnexion" value="Se connecter !"/>
-           
-       
-            </form>
-            </div>
-
-            <div>
-            <a href="inscription.php"><input type ="submit" name ="formconnexion" value="Créer un compte !"/></a>
-            </div>
-
-            <?php
-if (isset($erreur))
-{
-    echo  $erreur;
-}
-?>
+ <!--------------------------------------------------------------------------------FORMULAIRE CONNEXION-------------------------------------------------------------------------------->
+             <div class="conteneur-formulaire-connexion-inscription"> 
             
+            <form class="formulaire-connexion-inscription" method="POST" action="">
+                <h1>
+                    Connexion
+                </h1>
            
+            <input type ="text" name ="utilisateurconnexion" placeholder="Nom d'utilisateur"/> </br></br>
+          
+           <input type ="password" name ="mdpconnexion" placeholder="Mot de passe"/> </br></br>
+          
+           <input type ="submit" name ="formconnexion" value="Se connecter" class="boutton-connexion"/> </br>
+           
+          
 
+           <p>
+           
+           <a id="mdp-oublie" href="#">Mot de passe oublié ?</a>
+          </p>  
+
+          <a href="inscription.php"> <input type="button" value="Créer un compte" class="boutton-connexion"></a>
+          
+
+            </form> </br>
+            
+ <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+            <?php 
+        if (isset($erreur))
+        {       
+        echo  $erreur;
+        }
+        ?>
+
+      
+           
+             </div> 
 
         </div>
+
+      
 
         </body>
 

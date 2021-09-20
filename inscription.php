@@ -1,74 +1,7 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=espace_membre', 'root', 'root');
-
-if (isset($_POST['forminscription']))
-
-{
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $nomutilisateur = htmlspecialchars($_POST['nomutilisateur']);
-    $question = htmlspecialchars($_POST['question']);
-    $reponse = htmlspecialchars($_POST['reponse']);
-    $mdp = sha1($_POST['mdp']);
-    $mdp2 = sha1($_POST['mdp2']);
-
-    if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['nomutilisateur']) and !empty($_POST['mdp']) and !empty($_POST['mdp2']) and !empty($_POST['question']) and !empty($_POST['reponse']))
-
-    {
-
-        $nomlength = strlen($nom);
-        if ($nomlength <= 255)
-        {
-            $reqnomutilisateur = $bdd->prepare("SELECT * FROM inscription WHERE nomutilisateur = ?");
-            $reqnomutilisateur->execute(array(
-                $nomutilisateur
-            ));
-            $nomutilisateurexist = $reqnomutilisateur->rowCount();
-            if ($nomutilisateurexist == 0)
-            {
-                if ($mdp == $mdp2)
-
-                {
-                    $insertmbr = $bdd->prepare("INSERT INTO inscription(nom, prenom, nomutilisateur, motdepasse, question, reponse  ) VALUES (?, ?, ?, ?, ?, ?) ");
-                    $insertmbr->execute(array(
-                        $nom,
-                        $prenom,
-                        $nomutilisateur,
-                        $mdp,
-                        $question,
-                        $reponse,
-                    ));
-                    $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
-                }
-
-                else
-
-                {
-                    $erreur = "Vos mots de passe ne correspondent pas !";
-                }
-
-            }
-            else
-            {
-                $erreur = "Nom d'utilisateur déjà utiisée !";
-            }
-        }
-
-        else
-
-        {
-            $erreur = "Votre nom ne doit pas dépasser 255 caractères !";
-        }
-
-    }
-
-    else
-
-    {
-        $erreur = "Tous les champs doivent être complétés !";
-    }
-}
-
+ include 'gestionserveur/connexion-base-donnees.php'; //CONNEXION A LA BASE DE DONNÉES
+ include 'gestionserveur/gestion-inscription-utilisateur.php'; //GESTION DE LA D'INSCRIPTION
+ 
 ?>
 
         <!DOCTYPE html>
@@ -83,26 +16,27 @@ if (isset($_POST['forminscription']))
         </head>
 
         <body>
-            <header>
-                <img src="Images/logo_gbaf.png">
-                <p>
-                    Le Groupement Banque Assurance Français
-                </p>
+             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+            <header class="header">
+                
+                <a href="connexion.php"><img src="Images/logo_gbaf.png"></a>
+              
             </header>   
 
-            <div>
+            <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
+            <div class="conteneur-formulaire-connexion-inscription">
             <h2>Inscription</h2>
 
-            <form method="POST" action="">
+            <form class="formulaire-connexion-inscription" method="POST" action="">
             <table>
                 <tr>
 
                 <td>
-            <label for="nom">Nom :</label>
+            <label class="label-inscription" for="nom">Nom :</label>
                 </td>
 
                 <td>
-            <input type="text" id="nom" name="nom" value="<?php if (isset($nom))
+            <input type="text" id="nom" name="nom" value="<?php if (isset($nom)) 
 {
     echo $nom;
 } ?>"/>
@@ -111,7 +45,7 @@ if (isset($_POST['forminscription']))
 
         <tr>
                 <td>
-            <label for="prenom">Prénom :</label>
+            <label class="label-inscription" for="prenom">Prénom :</label>
                 </td>
 
                 <td>
@@ -124,7 +58,7 @@ if (isset($_POST['forminscription']))
         
         <tr>
                 <td>
-            <label for="nomutilisateur">Nom d'utilisateur:</label>
+            <label class="label-inscription" for="nomutilisateur">Nom d'utilisateur:</label>
                 </td>
 
                 <td>
@@ -137,7 +71,7 @@ if (isset($_POST['forminscription']))
 
         <tr>
                 <td>
-            <label for="mdp">Mot de passe:</label>
+            <label class="label-inscription" for="mdp">Mot de passe:</label>
                 </td>
 
                 <td>
@@ -148,7 +82,7 @@ if (isset($_POST['forminscription']))
 
         <tr>
                 <td>
-            <label for="mdp2">Confirmation du mot de passe:</label>
+            <label class="label-inscription" for="mdp2">Confirmation du mot de passe:</label>
                 </td>
 
                 <td>
@@ -159,7 +93,7 @@ if (isset($_POST['forminscription']))
 
         <tr>
                 <td>
-            <label for="question">Question secreète :</label>
+            <label class="label-inscription" for="question">Question secreète :</label>
                 </td>
 
                 <td>
@@ -173,7 +107,7 @@ if (isset($_POST['forminscription']))
 
         <tr>
                 <td>
-            <label for="reponse">Réponse à la question secrète :</label>
+            <label class="label-inscription" for="reponse">Réponse à la question secrète :</label>
                 </td>
 
                 <td>
@@ -187,7 +121,7 @@ if (isset($_POST['forminscription']))
         <tr>
             <td></td>
             <td>
-            <input type="submit" name="forminscription" value="Je m'inscris" />
+            <input type="submit" name="forminscription" value="Je m'inscris" class="boutton-connexion"/>
             </td>
 
         </tr>
