@@ -1,5 +1,5 @@
 <?php
- include 'gestionserveur/connexion-base-donnees.php'; //CONNEXION A LA BASE DE DONNÉES
+//  include 'gestionserveur/connexion-base-donnees.php'; //CONNEXION A LA BASE DE DONNÉES
  include 'gestionserveur/gestion-inscription-utilisateur.php'; //GESTION DE LA D'INSCRIPTION
  
 ?>
@@ -19,15 +19,15 @@
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
             <header class="header">
                 
-                <a href="connexion.php"><img src="Images/logo_gbaf.png"></a>
+                <a href="index.php"><img src="Images/logo_gbaf.png"></a>
               
             </header>   
 
             <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
-            <div class="conteneur-formulaire-connexion-inscription">
+            <div class="conteneur-formulaire">
             <h2>Inscription</h2>
 
-            <form class="formulaire-connexion-inscription" method="POST" action="">
+            <form class="formulaire" method="POST" action="">
             <table>
                 <tr>
 
@@ -93,7 +93,7 @@
 
         <tr>
                 <td>
-            <label class="label-inscription" for="question">Question secreète :</label>
+            <label class="label-inscription" for="question">Question secrète :</label>
                 </td>
 
                 <td>
@@ -121,7 +121,7 @@
         <tr>
             <td></td>
             <td>
-            <input type="submit" name="forminscription" value="Je m'inscris" class="boutton-connexion"/>
+            <input type="submit" name="boutton_inscription" value="Je m'inscris" class="boutton-formulaire"/>
             </td>
 
         </tr>
@@ -130,11 +130,11 @@
             </form>
             
             <?php
-if (isset($erreur))
-{
-    echo $erreur;
-}
-?>
+   if (isset($erreur))
+   {       
+   echo  '<font color="red">'.$erreur."</font>";
+   }
+   ?>
         </div>
 
         </body>

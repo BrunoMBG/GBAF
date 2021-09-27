@@ -1,8 +1,12 @@
  <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
  <?php
-     include 'gestionserveur/connexion-base-donnees.php';
+//      include 'gestionserveur/connexion-base-donnees.php';
      include 'gestionserveur/gestion-modification-profil.php';
      
+     if (!isset($_SESSION['id']))
+{
+   header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +23,25 @@
 
         <body>
  <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-                    <?php
-                    include 'header.php';
-                    ?>  
- <!--------------------------------------------------------------------------------FORMULAIRE CONNEXION-------------------------------------------------------------------------------->
+
+                <header class="header">
+                
+                <a href="accueil.php"><img src="Images/logo_gbaf.png"></a>
+
+                <div id="menu">
+                
+                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
+                        <i class="fas fa-user-alt icone-profil"></i>  
+                        <p>
+                        <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?> 
+                        </p>
+                </a>
+                <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+                </div>
+                
+                </header>
+                
+        <!--------------------------------------------------------------------------------TITRE DE LA PAGE------------------------------------------------------------->
              <div id="page-modification"> 
                 
              <h1>
@@ -31,6 +50,7 @@
                 
             </div>
 
+            <!--------------------------------------------------------------------------------FORMULAIRE DE MODIFICATION DE DONNÉES------------------------------------------------------------->
             <form class="" method="POST" action="">
                
            
@@ -117,7 +137,7 @@
         
         <tr>
             <td></td>
-            <td id="test">
+            <td>
             <input type="submit" name="forminscription" value="Mettre à jour mon profil" id="button-modification"/>
             </td>
 
@@ -129,27 +149,20 @@
             </div>
            
           
-<!-- 
-           <p>
-           
-           <a id="mdp-oublie" href="#">Mot de passe oublié ?</a>
-          </p>   -->
-
-          <!-- <a href="inscription.php"> <input type="button" value="Créer un compte" class="boutton-connexion"></a> -->
           
 
-            </form> </br>
+            </form> 
             
  <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
       
 
       
            
-             </div> 
+             <!-- </div> 
 
-        </div>
+        </div> -->
         <?php if(isset($msg)) { echo $msg; } ?>
-
+ <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------------->
         <footer>
         
         <a href="#">

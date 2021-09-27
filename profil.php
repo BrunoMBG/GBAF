@@ -1,6 +1,11 @@
 <?php
-include 'gestionserveur/connexion-base-donnees.php'; //CONNEXION A LA BASE DE DONNÉES
+// include 'gestionserveur/connexion-base-donnees.php'; //CONNEXION A LA BASE DE DONNÉES
 include 'gestionserveur/gestion-profil.php'; //GESTION DE LA PAGE DE PROFIL
+
+if (!isset($_SESSION['id']))
+{
+   header('Location: index.php');
+}
 
 ?>
 
@@ -20,17 +25,34 @@ include 'gestionserveur/gestion-profil.php'; //GESTION DE LA PAGE DE PROFIL
 
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-             <?php
-            include 'header.php';
-            ?>
-              <div id="page-modification"> 
+            
+            <header class="header">
+      
+                    <a href="accueil.php"><img src="Images/logo_gbaf.png"></a>
+
+                <div id="menu">
+                
+                    <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
+                        <i class="fas fa-user-alt icone-profil"></i>  
+                        <p>
+                        <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?> 
+                        </p>
+                    </a>
+                    <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+                </div>
+  
+            </header>
+
+              
+            <!--------------------------------------------------------------------------------PROFIL -------------------------------------------------------------------------------->
+            <div id="page-modification"> 
                 
                 <h1>
                   Profil
                    </h1>
                    
                </div>
-            <!--------------------------------------------------------------------------------PROFIL -------------------------------------------------------------------------------->
+               
             <div id="nom-du-profil">
             <i class="fas fa-user-alt icone-page-profil"></i> 
             
@@ -71,11 +93,13 @@ include 'gestionserveur/gestion-profil.php'; //GESTION DE LA PAGE DE PROFIL
                
             
             </div>
-             <!--------------------------------------------------------------------------------BUTTON POUR MODIFIER LE PROFIL -------------------------------------------------------------------------------->
+             <!--------------------------------------------------------------------------------BUTTON POUR MODIFIER LE PROFIL ----------------------------------------------------------------->
             <div id="button-profil">
                 <a href="modifier-profil.php"> <input button id="button-page-de-profil" type="button" value="Modifier"></a>
            
             </div>
+            
+            <!--------------------------------------------------------------------------------FOOTER ----------------------------------------------------------------->
             <footer>
         
         <a href="#">

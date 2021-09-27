@@ -2,6 +2,16 @@
 <?php
 session_start();
 include 'gestionserveur/connexion-base-donnees.php';
+
+//REDIRIGER VERS LA PAGE D'ACCUEIL POUR LES UTILISATEURS QUi NE SONT PAS CONNECTÉ
+
+if (!isset($_SESSION['id']))
+{
+   header('Location: index.php');
+}
+
+
+
 ?>
 
 
@@ -15,9 +25,22 @@ include 'gestionserveur/connexion-base-donnees.php';
    <body>
    <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
 
-      <?php
-      include 'header.php';
-      ?>
+         <header class="header">
+               
+               <a href="accueil.php"><img src="Images/logo_gbaf.png"></a>
+
+            <div id="menu">
+            
+               <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
+                  <i class="fas fa-user-alt icone-profil"></i>  
+                  <p>
+                  <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?> 
+                  </p>
+               </a>
+               <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+            </div>
+         
+         </header>
 
   <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
   <div id="page"> 
@@ -54,6 +77,19 @@ include 'gestionserveur/connexion-base-donnees.php';
          <h2>
             Acteurs et partenaires du système bancaire français
          </h2>
+
+         <p>
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae pretium est. Duis id euismod mi. 
+               Nulla ac vulputate elit. Sed aliquet congue eros id vehicula. In in quam rutrum massa laoreet ultricies. 
+               Etiam placerat hendrerit cursus. Ut mollis, arcu et efficitur imperdiet, justo ante vulputate massa, ac ullamcorper ante nunc vel neque.
+               Mauris semper rhoncus tristique. 
+               Cras pharetra lectus nec risus auctor faucibus. Donec porta, magna in efficitur auctor, nisl velit semper risus, nec mollis elit tellus et arcu. 
+               Maecenas felis urna, efficitur eu mi sed, consequat porttitor leo. Sed vestibulum consequat arcu, ut rhoncus augue tempor finibus. 
+               Integer eu mollis ante. Vestibulum pellentesque tincidunt risus, sit amet eleifend augue auctor varius. Mauris eget pulvinar nisi. 
+               Suspendisse potenti. Duis laoreet quam nunc, ut facilisis turpis congue id. Sed malesuada volutpat odio, sed imperdiet magna ultrices vel. 
+               Morbi dignissim suscipit congue. Nunc risus turpis, molestie a fringilla ac, placerat quis libero. Maecenas dapibus sem et ligula congue sollicitudin. 
+               Nullam ullamcorper mattis nisi, sit amet sollicitudin lectus. Nullam varius tellus augue, eu interdum leo lacinia vitae.
+         </p>
 
          <article class="partenaires">
             <div> 

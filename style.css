@@ -17,6 +17,8 @@
    margin: auto;
 }
 
+
+
 /* ------------------------------------------------------------------------------HEADER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
  .header{
     padding-bottom: 20px;
@@ -36,6 +38,40 @@
      margin: 20px 0  0 20px;
  }
 
+/* ------------------------------------------------------------------------------FORMULAIRE------------------------------------------------------------------------------*/
+.conteneur-formulaire{
+    margin: 200px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 600px;
+    background-color: white;
+} 
+
+.formulaire p {
+    border-bottom: 1px red solid;
+    padding-bottom: 15px;
+    
+}
+
+.formulaire input{
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+.boutton-formulaire{
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+}
+
+.boutton-formulaire:hover{
+    background-color:rgba(255, 16, 16, 0.925);
+}
 
 
  /* ------------------------------------------------------------------------------FOOTER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
@@ -61,51 +97,24 @@ footer p {
     padding-right: 10px;
 }
 
- /* ------------------------------------------------------------------------------PAGE DE CONNEXION ------------------------------------------------------------------------------*/
- .conteneur-formulaire-connexion-inscription{
-    margin: 200px auto;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
-    padding: 20px 20px; 
-    width: 600px;
-    background-color: white;
-} 
 
-.formulaire-connexion-inscription p {
-    border-bottom: 1px red solid;
-    padding-bottom: 15px;
-    
-}
 
-.formulaire-connexion-inscription input{
-    margin:  auto; 
-    text-align: center;
-    padding: 15px;  
-    border-radius: 24px;
-}
+ /* ------------------------------------------------------------------------------VERIFICATION DU COMPTE------------------------------------------------------------------------------*/
 
-.boutton-connexion{
+ 
+
+ #boutton-verification-compte{
     color: white;
     background-color: red;
+    /* margin-top: 300px; */
     opacity: 0.8;
+    width: 450px;
     border: none;
-}
-
-.boutton-connexion:hover{
-    background-color:rgba(255, 16, 16, 0.925);
-}
-
-#mdp-oublie:hover{
-    color:rgba(255, 16, 16, 0.925);
-}
-
- /* ------------------------------------------------------------------------------PAGE D'INSCRIPTION ------------------------------------------------------------------------------*/
-
- .label-menu{
-    font-size: 25px;
-    margin: auto;
+    
+    
  }
+ 
+
  /* ------------------------------------------------------------------------------PAGE DE ACCUEIL ------------------------------------------------------------------------------*/
 
 #menu{
@@ -137,11 +146,16 @@ footer p {
 
 #conteneur-partenaires{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
-    padding: 15px 15px 1px 10px;
+    padding: 15px 15px 5px 15px;
+    margin-bottom: 50px;
 }
 #conteneur-partenaires h2{
     text-align: center;
     margin-bottom: 30px;
+}
+#conteneur-partenaires p{
+    font-size: 25px;
+    text-align: center;
 }
 #presentation{
     text-align: center;
@@ -160,7 +174,7 @@ footer p {
 }
 
 #presentation p{
-    font-size: 20px;
+    font-size: 25px;
 }
 
  #presentation img{
@@ -187,10 +201,6 @@ footer p {
 
 .partenaires h3{
     font-size: 30px;
-}
-
-.partenaires p{
-    font-size: 20px;
 }
 
 .buttonpartenaires{
@@ -279,7 +289,6 @@ footer p {
     padding: 15px 0 15px 0;
     text-align: center;
     color: white;
-    /* vertical-align; */
     margin: auto;
    
 }
@@ -307,9 +316,7 @@ footer p {
 .label-formulaire-modification{
     font-size: 20px;
 }
-#test{
-    padding-top: 20px;
-}
+
 #button-modification{
     margin-top: 50px;
     color: white;

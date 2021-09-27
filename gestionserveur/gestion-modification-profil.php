@@ -39,8 +39,10 @@ if(isset($_SESSION['id']))
      //MODIFIER LE MOT DE PASSE
      if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2']))
     {
-        $mdp = sha1 ($_POST['newmdp']);
-        $mdp2 = sha1 ($_POST['newmdp2']);
+        $mdp = password_hash($_POST['newmdp'], PASSWORD_DEFAULT);
+        $mdp2 = password_hash($_POST['newmdp2'], PASSWORD_DEFAULT);
+        // $mdp = sha1 ($_POST['newmdp']);
+        // $mdp2 = sha1 ($_POST['newmdp2']);
         
         if($mdp == $mdp2)
         {

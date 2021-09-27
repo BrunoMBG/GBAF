@@ -1,6 +1,6 @@
  <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
 <?php
-     include 'gestionserveur/connexion-base-donnees.php';
+    //  include 'gestionserveur/connexion-base-donnees.php';
      include 'gestionserveur/gestion-connexion-utilisateur.php';
      
 ?>
@@ -13,21 +13,21 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="style.css" />
-            <title>connexion</title>
+            <title>Connexion</title>
         </head>
 
         <body>
  <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
             <header class="header">
                   
-                 <a href="connexion.php"><img src="Images/logo_gbaf.png"></a>
+                 <a href="index.php"><img src="Images/logo_gbaf.png"></a>
                
                 
             </header>   
  <!--------------------------------------------------------------------------------FORMULAIRE CONNEXION-------------------------------------------------------------------------------->
-             <div class="conteneur-formulaire-connexion-inscription"> 
+             <div class="conteneur-formulaire"> 
             
-            <form class="formulaire-connexion-inscription" method="POST" action="">
+            <form class="formulaire" method="POST" action="">
                 <h1>
                     Connexion
                 </h1>
@@ -36,16 +36,16 @@
           
            <input type ="password" name ="mdpconnexion" placeholder="Mot de passe"/> </br></br>
           
-           <input type ="submit" name ="formconnexion" value="Se connecter" class="boutton-connexion"/> </br>
+           <input type ="submit" name ="boutton_connexion" value="Se connecter" class="boutton-formulaire"/> </br>
            
           
 
            <p>
            
-           <a id="mdp-oublie" href="#">Mot de passe oublié ?</a>
+           <a id="mdp-oublie" href="verification_compte.php">Mot de passe oublié ?</a>
           </p>  
 
-          <a href="inscription.php"> <input type="button" value="Créer un compte" class="boutton-connexion"></a>
+          <a href="inscription.php"> <input type="button" value="Créer un compte" class="boutton-formulaire"></a>
           
 
             </form> </br>
@@ -54,7 +54,7 @@
             <?php 
         if (isset($erreur))
         {       
-        echo  $erreur;
+        echo  '<font color="red">'.$erreur."</font>";
         }
         ?>
 
