@@ -62,9 +62,14 @@ include 'gestionserveur/gestion-changer-mdp.php';
             </td>
 
         </tr>
-        </table>
+        </table>    
        
-            </form> </br>   
+        <?php  if(isset($message))
+   {
+       echo '<a href="index.php">   <input type=button value="Se connectar" class="boutton-formulaire" /> </a>';
+   }?> 
+  
+            </form>   
 
      <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
             <?php
@@ -72,13 +77,16 @@ include 'gestionserveur/gestion-changer-mdp.php';
    {       
    echo  '<font color="red">'.$erreur."</font>";
    }
-   ?>
 
   
+   ?>
+  
+
+   <!-- <button class="boutton-formulaire"> Se connectar</button> -->
         </div>
 
     
-        
+      
 
         </body>
 

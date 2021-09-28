@@ -12,7 +12,7 @@
  }
 
 /* ------------------------------------------------------------------------------PAGE DU SITE------------------------------------------------------------------------------*/
- #page{
+ .page{
     width: 95%; 
    margin: auto;
 }
@@ -326,4 +326,131 @@ footer p {
     
 }
 
+/* ------------------------------------------------------------------------------PAGE DES PARTENAIRES------------------------------------------------------------------------------*/
+/* .conteneur-commentaire{
+   text-align: center;
+   width: 95%;
+   margin: auto;
+} */
 
+.section_formulaire{
+    margin-bottom: 50px;
+}
+.conteneur-page-partenaires{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    padding: 15px 15px 5px 15px;
+    /* margin-bottom: 50px; */
+    align-items: center;
+    margin-top: 30px;
+    
+
+    
+    }
+
+    .conteneur-image-partenaires{
+        text-align: center;
+    }
+
+    
+
+    .conteneur-page-partenaires h2{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .conteneur-page-partenaires p{
+        font-size: 25px;
+        text-align: center;
+     
+    }
+    .conteneur-page-partenaires li {
+        font-size: 25px;
+
+    }
+    .conteneur-commentaire{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 15px 15px 5px 15px;
+        /* margin-bottom: 50px; */
+        align-items: center;
+        margin-top: 30px;
+        
+    } .conteneur-commentaire input{
+        margin:  auto; 
+        text-align: center;
+        padding: 20px;  
+        border-radius: 24px;
+    }
+
+    .conteneur-commentaire-like{
+        display: flex;
+        /* background-color: red; */
+        justify-content: space-between;
+        /* text-align: center; */
+        align-items: center;
+        width: 95%;
+        margin: auto;
+     
+    }
+    .conteneur-commentaire-like p{
+        font-size: 40px;
+    }
+
+    .bouton_commentaires_like{
+        display:flex;
+       
+
+    }
+
+   
+    .nouveau_commentaire{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 25px 25px 25px 25px;
+      
+        align-items: center;
+        margin-top: 30px;
+        margin-right: 30px;
+        border-radius: 24px;
+    }
+    .likes{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 35px;
+        margin-top: 30px;
+        border-radius: 24px;
+        width: 110px;
+       display: flex;
+       justify-content: space-around;
+    }
+
+    .likes i{
+       font-size: 35px;
+    }
+    .bouton_commentaires{
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        border: none;
+       
+       
+        
+        
+    }
+
+    .form-commentaire{
+        width: 95%;
+        
+        height: 200px;
+       align-items: center;
+    }
+
+    .conteneur-form-commentaire{
+        text-align: center;
+    }
+
+    .submit-form{
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        border: none;
+       
+    }
+
+   

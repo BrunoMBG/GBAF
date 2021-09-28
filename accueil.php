@@ -38,12 +38,13 @@ if (!isset($_SESSION['id']))
                   </p>
                </a>
                <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+               
             </div>
          
          </header>
 
   <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
-  <div id="page"> 
+  <div class="page"> 
       <div id="presentation">
        
             <h1>
@@ -104,7 +105,9 @@ if (!isset($_SESSION['id']))
                </p>
             </div>
             <div>
-               <button class="buttonpartenaires">Lire la suite</button>
+               
+               <a href="cde.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
+               
             </div>
          </article>
 
@@ -122,7 +125,10 @@ if (!isset($_SESSION['id']))
                </p>
             </div>
             <div>
-            <button class="buttonpartenaires">Lire la suite</button>
+            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
+
+            <a href="protectpeople.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
+            
             </div>
          </article>
 
@@ -139,7 +145,11 @@ if (!isset($_SESSION['id']))
                Dsa France accélère la croissance du territoire et s’engage av...
             </p>
             </div>
-            <button class="buttonpartenaires">Lire la suite</button>
+            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
+            
+            <a href=" dsa_france.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
+
+           
          </article>
 
          <article class="partenaires">
@@ -154,7 +164,10 @@ if (!isset($_SESSION['id']))
                Formation&co est une association française présente sur tout le territoire. Nous proposons à des...
             </p>
          </div>
-            <button class="buttonpartenaires">Lire la suite</button>
+            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
+            <a href="formation&co.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
+
+            
          </article>
       </section>
 

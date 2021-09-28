@@ -1,5 +1,6 @@
 <?php
-    
+    session_start();
+    include 'gestionserveur/connexion-base-donnees.php';
     if(isset($_POST['boutton-changer-mdp']))
     
     {
@@ -25,16 +26,22 @@
                 $reqrecup_mdp->execute(array($recup_mdp, $_SESSION['id']));
                 // header('Location: profil.php?id='.$_SESSION['id']);
                 // 
-                $erreur = "ok";
+                // $erreur = "ok";
+                $message ="";
+                
             }
            else
            {
                $erreur ="Vos mots de passe ne correspondent pas";
            }
         }
+        else{
+            $erreur ="Tous les champs doivent être complétés";
+        }
 
     }
 
+   
 
 
 
