@@ -1,4 +1,12 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=espace_membre', 'root', 'root'); //CONNEXION A LA BASE DE DONNÉES
+
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=gbaf', 'root', 'root'); //CONNEXION A LA BASE DE DONNÉES
+}
+catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
 
 ?>

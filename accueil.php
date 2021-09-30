@@ -1,9 +1,10 @@
  <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
-<?php
+ <?php
 session_start();
-include 'gestionserveur/connexion-base-donnees.php';
+
 
 //REDIRIGER VERS LA PAGE D'ACCUEIL POUR LES UTILISATEURS QUi NE SONT PAS CONNECTÉ
+
 
 if (!isset($_SESSION['id']))
 {
@@ -25,23 +26,12 @@ if (!isset($_SESSION['id']))
    <body>
    <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
 
-         <header class="header">
-               
-               <a href="accueil.php"><img src="Images/logo_gbaf.png"></a>
-
-            <div id="menu">
-            
-               <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
-                  <i class="fas fa-user-alt icone-profil"></i>  
-                  <p>
-                  <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?> 
-                  </p>
-               </a>
-               <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
-               
-            </div>
          
-         </header>
+         <?php
+            include 'header/header.php'
+        ?>
+
+
 
   <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
   <div class="page"> 
@@ -75,6 +65,7 @@ if (!isset($_SESSION['id']))
 
    <!------------------------------------------------------------------------------- PARTENAIRES -------------------------------------------------------------------------------->
       <section id="conteneur-partenaires"> 
+
          <h2>
             Acteurs et partenaires du système bancaire français
          </h2>
@@ -92,103 +83,89 @@ if (!isset($_SESSION['id']))
                Nullam ullamcorper mattis nisi, sit amet sollicitudin lectus. Nullam varius tellus augue, eu interdum leo lacinia vitae.
          </p>
 
+         
+
+<?php 
+
+   include 'gestionserveur/connexion-base-donnees.php';
+
+$req = $bdd->query('SELECT id, titre, contenu, logo FROM partenaires');
+
+// $req = $bdd->query('SELECT logo, partenaires.titre, partenaires.contenu, partenaires.id, partenaires.lien, logo.id_logo
+// FROM partenaires, logo
+// WHERE logo.id_partenaire = partenaires.id');
+while ($donnees = $req->fetch())
+{
+?>
+
+
          <article class="partenaires">
             <div> 
-               <img src="Images/CDE.png">
-            </div>
-            <div>
-               <h3>
-                  CDE
-               </h3>
-               <p>
-                  Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriale...
-               </p>
-            </div>
-            <div>
-               
-               <a href="cde.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
-               
-            </div>
-         </article>
-
-       
-         <article class="partenaires">
-         <div> 
-            <img src="Images/protectpeople.png">
-        </div>
-            <div>
-               <h3>
-                  Protectpeople
-               </h3>
-               <p>
-                  Protectpeople finance la solidarité nationale....
-               </p>
-            </div>
-            <div>
-            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
-
-            <a href="protectpeople.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
-            
-            </div>
-         </article>
-
-
-         <article class="partenaires">
-            <div>
-            <img src="Images/Dsa_france.png">
-            </div>
-            <div>
-            <h3>
-               DSA France
-            </h3>
-            <p>
-               Dsa France accélère la croissance du territoire et s’engage av...
-            </p>
-            </div>
-            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
-            
-            <a href=" dsa_france.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
-
+               <?php
+            //  echo'<img src="'.$donnees['nom'].'">';
            
-         </article>
-
-         <article class="partenaires">
-            <div>
-            <img src="Images/formation_co.png">
+           
+          
+                echo "<img src='./Images/".$donnees['logo']."' ><br>";
+           
+     
+             ?>
             </div>
             <div>
-            <h3>
-               Formation&Co
-            </h3>
-            <p>
-               Formation&co est une association française présente sur tout le territoire. Nous proposons à des...
-            </p>
-         </div>
-            <!-- <button class="buttonpartenaires">Lire la suite</button> -->
-            <a href="formation&co.php?id=$_SESSION['id]"><button class="buttonpartenaires">Lire la suite</button></a>
-
+               <h2>
+               <?php echo htmlspecialchars($donnees['titre']); ?>
+               </h2>
+               <p>
+                  <!-- Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriale... -->
+                 
+                  <?= substr($donnees['contenu'], 0, 69) . '...'; ?>
+               </p>
             
+
+               <?php 
+                  // echo '<h2>' . $donnees['acteur'] . '</h2>';
+                        // echo $donnees['description'];
+                    ?> 
+            </div>
+            <div>
+               
+               <a href="page_partenaire.php?partenaire=<?php echo $donnees['id']; ?>id=<?php echo $_SESSION['id']; ?>"><button class="buttonpartenaires">Lire la suite</button></a>
+
+            </div>
          </article>
+
+
+         <?php
+} // Fin de la boucle des billets
+$req->closeCursor();
+?>
+
+
+
+
+
+
       </section>
+
+
+
+
 
       </div>
 
+
+
+
+
+
+
+
    <!-------------------------------------------------------------------------------FOOTER -------------------------------------------------------------------------------->
      
-      <footer>
-        
-         <a href="#">
-         <p>
-            Mentions légales
-         </p>
-         </a>
-        
-         <a href="#">
-         <p id="contactfooter">
-            Contact
-         </p>
-         </a>
-      </footer>
+   <?php
+        include 'footer/footer.php';
+    ?>
+
 
    </body>
 </html>

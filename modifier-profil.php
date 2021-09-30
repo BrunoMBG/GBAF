@@ -24,22 +24,11 @@
         <body>
  <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
 
-                <header class="header">
-                
-                <a href="accueil.php"><img src="Images/logo_gbaf.png"></a>
+              
+                <?php
+                include 'header/header.php'
+                ?>
 
-                <div id="menu">
-                
-                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
-                        <i class="fas fa-user-alt icone-profil"></i>  
-                        <p>
-                        <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?> 
-                        </p>
-                </a>
-                <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
-                </div>
-                
-                </header>
                 
         <!--------------------------------------------------------------------------------TITRE DE LA PAGE------------------------------------------------------------->
              <div id="page-modification"> 
@@ -163,20 +152,10 @@
         </div> -->
         <?php if(isset($msg)) { echo $msg; } ?>
  <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------------->
-        <footer>
-        
-        <a href="#">
-        <p>
-           Mentions légales
-        </p>
-        </a>
-       
-        <a href="#">
-        <p id="contactfooter">
-           Contact
-        </p>
-        </a>
-     </footer>
+        <?php
+        include 'footer/footer.php';
+        ?>
+
       
 
       

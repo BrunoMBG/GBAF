@@ -17,11 +17,10 @@
 
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-            <header class="header">
-                
-                <a href="index.php"><img src="Images/logo_gbaf.png"></a>
-              
-            </header>   
+             <?php
+                include 'header/header.php'
+            ?>
+ 
 
             <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
             <div class="conteneur-formulaire">
@@ -120,7 +119,7 @@
         
         <tr>
             <td></td>
-            <td>
+            <td>    </br>
             <input type="submit" name="boutton_inscription" value="Je m'inscris" class="boutton-formulaire"/>
             </td>
 

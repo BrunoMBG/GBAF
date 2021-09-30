@@ -1,12 +1,6 @@
 <?php
-
  include 'gestionserveur/gestion-verification-reponse.php'; //GESTION DE MOT DE PASSE OUBLIÉ
  
-
-
-
-
-
 ?>
  
 
@@ -23,11 +17,10 @@
 
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-            <header class="header">
-                
-                <a href="index.php"><img src="Images/logo_gbaf.png"></a>
-              
-            </header>   
+             <?php
+            include 'header/header.php'
+             ?>
+   
 
             <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
             <div  class="conteneur-formulaire">

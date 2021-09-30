@@ -26,18 +26,10 @@
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
             
-            <header class="header">
-      
-                    <a href="index.php"><img src="Images/logo_gbaf.png"></a>
+             <?php
+            include 'header/header.php'
+            ?>
 
-                <div id="menu">
-                
-                
-                    </a>
-                    <!-- <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a> -->
-                </div>
-  
-            </header>
 
               
         <!--------------------------------------------------------------------------------VERIFICATION QUE LE NOM D'UTILISATEUR EXISTE ---------------------------------------------------->

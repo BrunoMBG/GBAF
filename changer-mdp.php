@@ -17,11 +17,10 @@ include 'gestionserveur/gestion-changer-mdp.php';
 
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-            <header class="header">
-                
-                <a href="index.php"><img src="Images/logo_gbaf.png"></a>
-              
-            </header>   
+             <?php
+            include 'header/header.php'
+            ?>
+ 
 
             <!--------------------------------------------------------------------------------FORMULAIRE POUR CHANGER LE MOT DE PASSE-------------------------------------------------------------------------------->
             <div class="conteneur-formulaire">
@@ -89,5 +88,10 @@ include 'gestionserveur/gestion-changer-mdp.php';
       
 
         </body>
+
+        <?php
+        include 'footer/footer.php';
+        ?>
+
 
         </html>
