@@ -1,12 +1,14 @@
 <?php
 //Commencer la SESSION
 session_start();
+
 //Connexion a la base de données
 include 'gestionserveur/connexion-base-donnees.php';
 
 //Vérifier si la variable existe
 if(isset($_POST['boutton_connexion']))
 {
+   
      //Proteger les variables et les simplifier
     $utilisateurconnexion = htmlspecialchars($_POST['utilisateurconnexion']);
     $mdpconnexion = sha1($_POST['mdpconnexion']);
@@ -50,3 +52,6 @@ if(isset($_POST['boutton_connexion']))
     }
 }
 ?>
+
+
+

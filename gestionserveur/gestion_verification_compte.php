@@ -26,8 +26,6 @@ if(isset($_POST['recup_submit']))
 
             //Recevoir les informations dans les variables de SESSION
             $_SESSION['id'] = $userinfo['id'];
-            // $_SESSION['nom'] = $userinfo['nom'];
-            // $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['nomutilisateur'] = $userinfo['nomutilisateur'];
             $_SESSION['motdepasse'] = $userinfo['motdepasse'];
             $_SESSION['question'] = $userinfo['question'];

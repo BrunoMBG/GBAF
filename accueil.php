@@ -1,15 +1,5 @@
- <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
- <?php
+<?php
 session_start();
-
-
-//REDIRIGER VERS LA PAGE D'ACCUEIL POUR LES UTILISATEURS QUi NE SONT PAS CONNECTÉ
-
-
-if (!isset($_SESSION['id']))
-{
-   header('Location: index.php');
-}
 
 
 
@@ -19,18 +9,32 @@ if (!isset($_SESSION['id']))
 <!DOCTYPE html>
 <html lang="fr">
    <head>
-      <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <!-- <meta name="viewport" content="width=device-width">    -->
       <title>Accueil</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="style/style.css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    </head>
    <body>
+      
    <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
 
-         
-         <?php
-            include 'header/header.php'
-        ?>
+         <header class="header">
+               
+               <a href="accueil.php"><img src="Images\logo_gbaf.png"></a>
 
+            <div id="menu">
+            
+               <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
+                  <i class="fas fa-user-alt icone-profil"></i>  
+                     <p>
+                        <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?>  
+                     </p>
+               </a>
+               <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+            </div>
+         </header>
 
 
   <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
@@ -85,86 +89,70 @@ if (!isset($_SESSION['id']))
 
          
 
-<?php 
+            <?php 
+                  //CONNEXION A LA BASE DE DONNEES
+               include 'gestionserveur/connexion-base-donnees.php';
 
-   include 'gestionserveur/connexion-base-donnees.php';
+               //SÉLECTIONNER L'ID, TITRE, CONTENU ET LOGO DE LA TABLE PARTENAIRES
+            $req = $bdd->query('SELECT id, titre, contenu, logo FROM partenaires');
+               //FAIRE UNE BOUCLE ET RECUPERER LES DONNEES
+            while ($donnees = $req->fetch())
+            {
+            ?>
 
-$req = $bdd->query('SELECT id, titre, contenu, logo FROM partenaires');
-
-// $req = $bdd->query('SELECT logo, partenaires.titre, partenaires.contenu, partenaires.id, partenaires.lien, logo.id_logo
-// FROM partenaires, logo
-// WHERE logo.id_partenaire = partenaires.id');
-while ($donnees = $req->fetch())
-{
-?>
-
-
+               <!-- ARTICLES PARTENAIRES -->
          <article class="partenaires">
+
+               <!-- LOGO -->
             <div> 
                <?php
-            //  echo'<img src="'.$donnees['nom'].'">';
-           
-           
-          
-                echo "<img src='./Images/".$donnees['logo']."' ><br>";
-           
-     
-             ?>
+                  echo "<img src='./Images/".$donnees['logo']."' ><br>";  
+               ?>
             </div>
+               <!-- TITRE ET CONTENU -->
             <div>
+
                <h2>
-               <?php echo htmlspecialchars($donnees['titre']); ?>
+                  <?php echo htmlspecialchars($donnees['titre']); ?>
                </h2>
+
                <p>
-                  <!-- Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriale... -->
-                 
                   <?= substr($donnees['contenu'], 0, 69) . '...'; ?>
                </p>
             
-
-               <?php 
-                  // echo '<h2>' . $donnees['acteur'] . '</h2>';
-                        // echo $donnees['description'];
-                    ?> 
             </div>
-            <div>
-               
-               <a href="page_partenaire.php?partenaire=<?php echo $donnees['id']; ?>id=<?php echo $_SESSION['id']; ?>"><button class="buttonpartenaires">Lire la suite</button></a>
 
+               <!-- BOUTON LIRE LA SUITE, RECUPERER L'ID DE LA PAGE ET L'ID D'utilisateur -->
+            <div>             
+               <a href="page_partenaire.php?partenaire=<?php echo $donnees['id']; ?>&id=<?php echo $_SESSION['id']; ?>"><button class="buttonpartenaires">Lire la suite</button></a>
             </div>
+
          </article>
 
 
          <?php
-} // Fin de la boucle des billets
-$req->closeCursor();
-?>
-
-
-
-
-
-
+               }   // FIN DE LA BOUCLE PARTENAIRES
+             $req->closeCursor();
+         ?>
       </section>
-
-
-
-
 
       </div>
 
-
-
-
-
-
-
-
    <!-------------------------------------------------------------------------------FOOTER -------------------------------------------------------------------------------->
      
-   <?php
-        include 'footer/footer.php';
-    ?>
+      <footer>
+            <a href="#">
+        <p>
+           Mentions légales
+        </p>
+            </a>
+       
+            <a href="#">
+        <p id="contactfooter">
+           Contact
+        </p>
+            </a>
+     </footer>
 
 
    </body>

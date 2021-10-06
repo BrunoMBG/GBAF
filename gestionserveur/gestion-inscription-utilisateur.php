@@ -52,7 +52,7 @@ if (isset($_POST['boutton_inscription']))
                     ));
 
                     //Message qui s'affiche quand le compte à été créé et lien que rediriger vers la paga de connexion
-                    $erreur = "Votre compte a bien été créé ! <a href=\"index.php\">Me connecter</a>";
+                    $erreur = "Votre compte a bien été créé ! <a href=\"index.php\">Se connecter</a>";
                 }
 
                 else

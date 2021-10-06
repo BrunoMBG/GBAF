@@ -1,9 +1,13 @@
 <?php
  include 'gestionserveur/gestion-verification-reponse.php'; //GESTION DE MOT DE PASSE OUBLIÉ
  
-?>
- 
 
+
+ if (!isset($_SESSION['id']))
+{
+   header('Location: index.php');
+}
+?>
         <!DOCTYPE html>
         <html lang="fr">
 
@@ -11,16 +15,16 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css" />
+            <link rel="stylesheet" href="style/style.css" />
             <title>Vérification de la réponse secrète</title>
         </head>
 
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
-             <?php
-            include 'header/header.php'
-             ?>
-   
+             <header class="header">
+                
+                <a href="index.php"><img src="Images\logo_gbaf.png"></a>
+            </header>
 
             <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
             <div  class="conteneur-formulaire">
@@ -32,11 +36,11 @@
          <!--------------------------------------------------------------------------------NOM D'UTILISATEUR-------------------------------------------------------------------------------->
         <tr>
                 <td>
-            <label class="label-recuperation-motdepasse" for="nomutilisateur">Nom d'utilisateur :</label>
+                    <label class="label-recuperation-motdepasse" for="nomutilisateur">Nom d'utilisateur :</label>
                 </td>
 
                 <td>
-            <!-- <input type="text" id="nomutilisateur" name="nomutilisateur"/> -->
+    
             <p>
             <?php echo $_SESSION['nomutilisateur']; ?>
             </p>
@@ -48,7 +52,7 @@
         <!--------------------------------------------------------------------------------QUESTION SECRÈTE-------------------------------------------------------------------------------->
         <tr>
                 <td>
-            <label class="label-recuperation-motdepasse" for="question">Question secrète :</label>
+                    <label class="label-recuperation-motdepasse" for="question">Question secrète :</label>
                 </td>
 
                 <td>
@@ -62,11 +66,11 @@
          <!--------------------------------------------------------------------------------RÉPONSE A LA QUESTION SECRÈTE---------------------------------------------------------------------->
         <tr>
                 <td>
-            <label class="label-recuperation-motdepasse" for="reponse">Réponse à la question secrète :</label>
+                    <label class="label-recuperation-motdepasse" for="reponse">Réponse à la question secrète :</label>
                 </td>
 
                 <td>
-            <input type="text"  id="reponse" name="recup_reponse" /> 
+                    <input type="text"  id="reponse" name="recup_reponse" /> 
                 </td>
         </tr> 
         
@@ -75,7 +79,7 @@
         <tr>
             <td></td>
             <td></br>
-            <input type="submit" name="boutton-changer-mdp" value="Changer le mot de passe" class="boutton-formulaire"/>
+            <input type="submit" name="boutton-changer-mdp" value="Valider" class="boutton-formulaire"/>
             </td>
 
         </tr>
@@ -91,10 +95,9 @@
    }
    ?>
 
-  
         </div>
 
-     <!--------------------------------------------------------------------------------FIN DE LA SESSION-------------------------------------------------------------------------------->
+     
         
 
         </body>

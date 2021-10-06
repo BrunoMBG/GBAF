@@ -1,6 +1,6 @@
  <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
  <?php
-//      include 'gestionserveur/connexion-base-donnees.php';
+
      include 'gestionserveur/gestion-modification-profil.php';
      
      if (!isset($_SESSION['id']))
@@ -17,7 +17,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-            <link rel="stylesheet" href="style.css" />
+            <link rel="stylesheet" href="style/style.css" />
             <title>Edition de mon profil</title>
         </head>
 
@@ -25,15 +25,30 @@
  <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
 
               
-                <?php
-                include 'header/header.php'
-                ?>
+               
+        <header class="header">
+               
+               <a href="accueil.php"><img src="Images\logo_gbaf.png"></a>
+
+            <div id="menu">
+            
+               <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
+                  <i class="fas fa-user-alt icone-profil"></i> 
+
+                  <p>
+                  <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?>  
+                  </p>
+               </a>
+
+               <a href="deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+            </div>
+        </header>
 
                 
         <!--------------------------------------------------------------------------------TITRE DE LA PAGE------------------------------------------------------------->
              <div id="page-modification"> 
                 
-             <h1>
+                <h1>
                 Edition de profil
                 </h1>
                 
@@ -46,88 +61,88 @@
 
            <div id="conteneur-formulaire-modification">
 
-           <!-- <h2>Edition de profil</h2> -->
-
            <form method="POST" action="">
            <table  id="formulaire-modification">
         <tr>
-
+                <!-- MODIFICATION DU NOM -->
                 <td>
-                <label class="label-formulaire-modification" >Nom :</label>
+                        <label class="label-formulaire-modification" >Nom :</label>
                 </td>
 
                 <td>
-                <input type ="text" name ="newnom" value="<?php echo $_SESSION['nom']; ?>"/>
+                        <input type ="text" name ="newnom" value="<?php echo $_SESSION['nom']; ?>"/>
                 </td>
         </tr>
 
+                 <!-- MODIFICATION DU PRENOM -->
         <tr>
                 <td>
-                <label class="label-formulaire-modification" >Prenom :</label>
+                        <label class="label-formulaire-modification" >Prenom :</label>
                 </td>
 
                 <td>
-                <input type ="text" name ="newprenom"  value="<?php echo $_SESSION['prenom']; ?>"/>
+                        <input type ="text" name ="newprenom"  value="<?php echo $_SESSION['prenom']; ?>"/>
                 </td>
         </tr>
-        
+                 <!-- MODIFICATION DU NOM D'UTILISATEUR -->
         <tr>
                 <td>
-                <label class="label-formulaire-modification" >Nom d'utilisateur :</label>
+                        <label class="label-formulaire-modification" >Nom d'utilisateur :</label>
                 </td>
 
                 <td>
-                <input type ="text" name ="newnomutilisateur"  value="<?php echo $_SESSION['nomutilisateur']; ?>"/>
+                        <input type ="text" name ="newnomutilisateur"  value="<?php echo $_SESSION['nomutilisateur']; ?>"/>
                 </td>
         </tr>
-
+                 <!-- MODIFICATION DU MOT DE PASSE-->
         <tr>
                 <td>
-                <label class="label-formulaire-modification">Mot de Passe :</label>
+                        <label class="label-formulaire-modification">Mot de Passe :</label>
                 </td>
 
                 <td>
-                <input type ="password" name ="newmdp"/>
+                        <input type ="password" name ="newmdp"/>
                 </td>
 
         </tr>
-
+                 <!-- CONFIRMATION DU MOT DE PASSE -->
         <tr>
                 <td>
-                <label class="label-formulaire-modification" >Confirmation du mot de passe :</label>
+                        <label class="label-formulaire-modification" >Confirmation du mot de passe :</label>
                 </td>
 
                 <td>
-                <input type ="password" name ="newmdp2" />
+                        <input type ="password" name ="newmdp2" />
                 </td>
 
         </tr>
-
+                <!-- MODIFICATION DE LA QUESTION SECRETE -->
         <tr>
                 <td>
-                <label class="label-formulaire-modification" >Question Secrète :</label>
+                        <label class="label-formulaire-modification" >Question Secrète :</label>
                 </td>
 
                 <td>
-                <input type ="text" name ="newquestion" value="<?php echo $_SESSION['question']; ?>"/>
+                        <input type ="text" name ="newquestion" value="<?php echo $_SESSION['question']; ?>"/>
                 </td>
 
         </tr>
-
+               
+                <!-- MODIFICATION DE LA REPONSE SECRETE -->
         <tr>
                 <td>
-                <label class="label-formulaire-modification">Réponse à la question secrète :</label>
+                        <label class="label-formulaire-modification">Réponse à la question secrète :</label>
                 </td>
 
                 <td>
-                <input type ="text" name ="newreponse" value="<?php echo $_SESSION['reponse']; ?>"/>
+                        <input type ="text" name ="newreponse" value="<?php echo $_SESSION['reponse']; ?>"/>
                 </td>
         </tr>
-        
+                <!-- BUTTON -->
         <tr>
             <td></td>
             <td>
-            <input type="submit" name="forminscription" value="Mettre à jour mon profil" id="button-modification"/>
+                <input type="submit" name="forminscription" value="Mettre à jour mon profil" id="button-modification"/>
             </td>
 
         </tr>
@@ -152,9 +167,19 @@
         </div> -->
         <?php if(isset($msg)) { echo $msg; } ?>
  <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------------->
-        <?php
-        include 'footer/footer.php';
-        ?>
+        <footer>
+            <a href="#">
+        <p>
+           Mentions légales
+        </p>
+            </a>
+       
+            <a href="#">
+        <p id="contactfooter">
+           Contact
+        </p>
+            </a>
+     </footer>
 
       
 

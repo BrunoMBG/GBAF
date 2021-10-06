@@ -7,6 +7,10 @@
 //    header('Location: index.php');
 // }
  
+// if(isset($_POST['recup_nomutilisateur']) AND empty($_POST['recup_nomutilisateur'])) {
+//     header ('Location: http://localhost/GBAF/index.php');
+//     // header ('Location: http://localhost/GBAF/page_partenaire.php?partenaire='.$getid);
+// }
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +21,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-            <link rel="stylesheet" href="style.css" />
-            <link href="main.css" rel="style.css">
+            <link rel="stylesheet" href="style/style.css" />
             <title>Retrouvez votre compte</title>
 
         </head>
@@ -26,9 +29,12 @@
         <body>
              <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
             
-             <?php
-            include 'header/header.php'
-            ?>
+             <header class="header">
+                  
+                  <a href="index.php"><img src="Images/logo_gbaf.png"></a>
+                
+                 
+             </header>   
 
 
               
@@ -58,6 +64,7 @@
         echo  '<font color="red">'.$erreur."</font>";
         }
         ?>
+
 
 
         </form>
