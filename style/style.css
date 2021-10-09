@@ -1,0 +1,781 @@
+ 
+ /* ------------------------------------------------------------------------------BODY DU SITE------------------------------------------------------------------------------*/
+ *{
+    margin: 0;
+    padding: 0;
+ }
+ 
+ 
+ 
+
+ /* ------------------------------------------------------------------------------TOUS LES LIENS------------------------------------------------------------------------------*/
+ a{
+    text-decoration: none;
+ }
+
+ 
+ /* ------------------------------------------------------------------------------TOUS LES INPUT-----------------------------------------------------------------------------*/
+ input {
+    outline: none;
+
+ }
+
+/* ------------------------------------------------------------------------------PAGE DU SITE------------------------------------------------------------------------------*/
+ .page{
+    width: 95%; 
+   margin: auto;
+}
+
+
+
+/* ------------------------------------------------------------------------------HEADER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
+ .header{
+    padding-bottom: 20px;
+    background-color: #0c0c0cc2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+ .header img{
+     border: 1px black solid;
+      height: 110px;  
+     width: 110px;
+     border-radius: 30px;
+     background-color: white;
+     margin: 20px 0  0 20px;
+ }
+
+
+/* ------------------------------------------------------------------------------FORMULAIRE PAGE DE CONNEXION------------------------------------------------------------------------------*/
+
+#conteneur-formulaire-connexion {
+    margin: 190px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+}
+
+#formulaire-connexion h1 {
+    margin: 15px 0 25px 0;
+}
+
+#formulaire-connexion p {
+    border-bottom: 1px red solid;
+    padding-bottom: 15px;
+    margin: 15px 0 15px 0;
+}
+
+#formulaire-connexion input {
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+#nom-utilisateur-connexion {
+    width: 90%;
+}
+
+#mdp-connexion {
+    width: 90%;
+}
+#boutton-formulaire-connexion-connecter {
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+    width: 60%;
+}
+
+#boutton-formulaire-connexion-connecter:hover {
+    background-color:rgba(255, 16, 16, 0.925);
+}
+#boutton-formulaire_connexion-creer-compte {
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+    width: 60%;
+}
+
+#boutton-formulaire_connexion-creer-compte:hover {
+    background-color:rgba(255, 16, 16, 0.925);
+}
+
+/* ------------------------------------------------------------------------------FORMULAIRE PAGE D'INSCRIPTION------------------------------------------------------------------------------*/
+#conteneur-formulaire-inscription {
+    margin: 105px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+    
+}
+
+#conteneur-formulaire-inscription h1 {
+
+    margin: 10px 0 15px 0;
+}
+
+
+
+.label-inscription {
+    font-size: 25px;   
+}
+
+.champs  {
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;
+    margin-bottom: 5px;
+    width: 540px;
+}
+
+#boutton-formulaire-inscription {
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+    width: 60%;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+
+/* ------------------------------------------------------------------------------FORMULAIRE DE RETROUVEZ COMPTE------------------------------------------------------------------------------*/
+#conteneur-formulaire-retrouvez-compte{
+    margin: 105px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+}
+
+#formulaire-retrouvez-compte h2 {
+    margin: 15px 0 20px 0;
+}
+#formulaire-retrouvez-compte input{
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+#label-verification-compte{
+    font-size: 25px;
+}
+
+#verification {
+    width: 80%;
+}
+
+#boutton-verification-compte{
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    width: 450px;
+    border: none;
+    
+    
+ }
+
+ /* ------------------------------------------------------------------------------FORMULAIRE DE VERIFICATION REPONSE------------------------------------------------------------------------------*/
+#conteneur-formulaire-verification-reponse {
+    margin: 160px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+}
+
+#conteneur-formulaire-verification-reponse h2 {
+    margin: 15px 0 20px 0;
+}
+
+#formulaire-verification-reponse input {
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+#formulaire-verification-reponse p {
+    border-bottom: 1px red solid;
+    padding-bottom: 10px;
+    margin: 15px 0 15px 0;
+    width: 600px;
+}
+
+
+.label-verification-reponse{
+    font-size: 23px;
+}
+
+
+#champ-verification-reponse{
+    padding: 15px;  
+    border-radius: 24px;
+    margin-bottom: 5px;
+    width: 540px;
+}
+
+#boutton-formulaire-verification-reponse {
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    width: 450px;
+    border: none;
+}
+
+
+#boutton-formulaire-verification-reponse:hover {
+    background-color:rgba(255, 16, 16, 0.925);
+}
+ /* ------------------------------------------------------------------------------FORMULAIRE DE CHANGER MOT DE PASSE------------------------------------------------------------------------------*/
+ #conteneur-formulaire-changer-mdp {
+    margin: 160px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+}
+
+#conteneur-formulaire-changer-mdp h2 {
+    margin: 15px 0 20px 0;
+}
+
+#formulaire-changer-mdp input{
+    padding: 15px;  
+    border-radius: 24px;
+    margin-bottom: 15px;
+}
+
+.champ_mdp {
+    padding: 15px;  
+    border-radius: 24px;
+    width: 540px;   
+}
+
+.label-changer-mdp {
+    font-size: 25px;
+}
+
+#boutton-formulaire-changer_mdp {
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    width: 450px;
+    border: none;
+}
+ /* ------------------------------------------------------------------------------FOOTER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
+footer{
+    background-color: #0c0c0cc2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; 
+}
+
+footer p {
+    font-size: 20px;
+    border-left: 2px white solid;
+    margin: 0 5px 0 5px;
+    color: white; 
+    padding: 0 10px 0 10px; 
+}
+
+#contactfooter{
+    border-right: 2px white solid;
+    padding-right: 10px;
+}
+ 
+
+ /* ------------------------------------------------------------------------------PAGE DE ACCUEIL ------------------------------------------------------------------------------*/
+
+#menu{
+    align-items: center;
+    display: flex;
+}
+
+#menu a{
+   display: flex;
+   margin-left: 35px;
+   color: white; 
+}
+
+.icone-profil{
+    font-size: 40px;
+    margin-right: 20px;   
+}
+
+#menu p{
+    font-size: 30px;
+    margin: 0;
+ }
+
+.icone-deconnexion{
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+#conteneur-partenaires{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    padding: 15px 15px 5px 15px;
+    margin-bottom: 50px;
+}
+#conteneur-partenaires h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+#conteneur-partenaires p{
+    font-size: 25px;
+    text-align: center;
+}
+#presentation{
+    text-align: center;
+    margin: auto;
+    margin: 50px 0 50px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+}
+
+#presentation h1{
+    padding-top: 20px;
+    font-size: 35px;
+}
+
+#presentation h3{
+    font-size: 25px;
+}
+
+#presentation p{
+    font-size: 25px;
+}
+
+ #presentation img{
+   width: 95%;
+   margin: 10px 0 10px 0;
+} 
+
+.partenaires{
+    display: flex;  
+    height: 200px;
+    position: relative;
+    margin: 30px 0 30px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.partenaires img{
+     height: 130px;
+     width: 300px;
+     padding-right: 30px;
+     padding-left: 30px;
+     margin: 35px auto;
+     align-items: center; 
+}
+
+.partenaires h2{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.buttonpartenaires{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+    padding: 15px;  
+    border-radius: 24px;
+} 
+
+/* ------------------------------------------------------------------------------PAGE DE PROFIL ------------------------------------------------------------------------------*/
+.icone-page-profil{
+    font-size: 60px;
+    padding: 10px 0 10px 20px;
+ 
+}
+#nom-du-profil{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    width: 50%;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#nom-du-profil h2{
+    margin-left: 20px;
+}
+
+.a-propos-de-moi{
+    align-items: center;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    width: 50%;
+    height: 150px; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+ .a-propos-de-moi h2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+} 
+
+.a-propos-de-moi p{
+    font-size: 18px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#button-profil{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0 40px 0;
+}
+
+#button-page-de-profil{
+    right: 20px;
+    bottom: 20px;
+    width: 600px;
+    font-size: 20px;
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+    padding: 15px;  
+    border-radius: 24px;
+}
+
+#button-profil a :hover{
+    background-color:rgba(255, 16, 16, 0.925);
+}
+
+
+/* ------------------------------------------------------------------------------PAGE DE MODIFICATION DE PROFIL ------------------------------------------------------------------------------*/
+#page-modification{
+    background-color: red;
+}
+
+#page-modification h1{
+    padding: 15px 0 15px 0;
+    text-align: center;
+    color: white;
+    margin: auto;
+   
+}
+
+
+#conteneur-formulaire-modification{
+    margin: 86px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+    padding: 20px 20px; 
+    width: 800px;
+    background-color: white;
+}
+
+#formulaire-modification input{
+    margin:  auto; 
+    text-align: center;
+    padding: 15px;  
+    border-radius: 24px;   
+    margin-bottom: 10px;
+}
+
+.label-formulaire-modification{
+    font-size: 23px;
+}
+
+.champ-modification-profil {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+#button-modification{
+    margin-top: 50px;
+    width: 300px;
+    color: white;
+    background-color: red;
+    opacity: 0.8;
+    border: none;
+}
+/* ------------------------------------------------------------------------------PAGE DES PARTENAIRES------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------PRESENTATION DES PARTENAIRES------------------------------------------------------------------------------*/
+    .conteneur-page-partenaires{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    padding: 15px 15px 5px 15px;
+    align-items: center;
+    margin-top: 30px;
+    }
+
+    .conteneur-image-partenaires{
+        text-align: center;
+    }
+
+    .conteneur-page-partenaires h2{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .conteneur-page-partenaires p{
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+  
+
+/* ------------------------------------------------------------------------------SECTION DE COMMENTAIRE------------------------------------------------------------------------------*/
+    .section_formulaire{
+    margin-bottom: 50px;
+    }
+
+    .conteneur-commentaire{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 15px 15px 5px 15px;
+        align-items: center;
+        margin-top: 30px;   
+    } 
+    
+    .conteneur-commentaire input{
+        margin:  auto; 
+        text-align: center;
+        padding: 20px;  
+        border-radius: 24px;
+    }
+
+    .conteneur-commentaire-like{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin: auto;
+     
+    }
+    .conteneur-commentaire-like p{
+        font-size: 40px;
+    }
+         /* -----------------------BOUTTON DE NOUVEAU COMMENTAIRE ET LIKES/DISLIKES-----------------------*/
+    .bouton_commentaires_like{
+        display:flex;
+    }
+
+    .nouveau_commentaire{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 25px 25px 25px 25px;
+        align-items: center;
+        margin-top: 30px;
+        margin-right: 30px;
+        border-radius: 24px;
+    }
+
+    .bouton_commentaires{
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        border: none;    
+    }
+
+          /* -----------------------LIKES-----------------------*/
+    .likes{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    padding: 35px;
+    margin-top: 30px;
+    border-radius: 24px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .likes i{
+    font-size: 35px;
+    }
+    .likes_commentaires{
+        color: blue;
+    }
+    
+    .dislikes_commentaires {
+        color: red;
+    }
+    .numero-like-dislike{
+        font-size: 25px;
+    }
+        /* -----------------------COMMENTAIRES-----------------------*/
+    .commentaires {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        padding: 35px;
+        margin-top: 30px;
+        border-radius: 24px;
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;    
+    }
+
+    .commentaires h3{
+       font-size: 30px;
+    }
+
+    .commentaires label {
+        font-size: 20px;
+    }
+
+    .commentaires p {
+        font-size: 20px;
+    }
+
+         
+ /* ------------------------------------------------------------------------------   FORMULAIRE ------------------------------------------------------------------------------*/
+   
+    .conteneur-form-commentaire{
+        text-align: center;
+    }
+  
+
+    .form-commentaire{
+        width: 95%;
+        margin-top: 30px;
+        height: 200px;
+       align-items: center;
+    }
+
+    
+    .submit-form{
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        border: none;
+    }
+
+
+/* ------------------------------------------------------------------------------  RESPONSIVE, MOBILE ------------------------------------------------------------------------------*/
+/* @media screen and (min-width: 320px) and (max-width: 680px)  { 
+ 
+    .header{
+        padding-bottom: 20px;
+   
+       
+       
+    }
+    
+    #page {
+        width: 95%;
+    }
+    
+    #presentation{
+        text-align: center;
+        margin: auto;
+        width: 563px;
+        margin-bottom: 50px; 
+    }
+    
+    #presentation h1{
+        padding-top: 20px;
+        font-size: 35px;
+    }
+    
+    #presentation p{
+        text-align: center;
+    }
+    
+    #presentation h3{
+        font-size: 28px;
+    }
+    
+    
+    #conteneur-partenaires{
+        width: 535px;
+    }
+    
+    #conteneur-partenaires h2{
+        font-size: 30px;
+    }
+    
+    #conteneur-partenaires p{
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .buttonpartenaires {
+        padding: 20px;
+        font-size: 20px;
+    }
+    
+    
+    .partenaires {
+        background-color: white;
+        height: 345px;  
+        padding-right: 10px;
+    }
+    
+    .partenaires img {
+        height: 160px;
+        width: 250px;
+        margin: 15% auto;
+    }
+    
+    
+    .partenaires p {
+      font-size: 10px;
+    }
+    
+    
+     .conteneur-formulaire{
+        margin: 200px auto;
+        text-align: center;
+        border-radius: 30px;
+        box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
+        padding: 20px 20px; 
+        width: 290px;
+        background-color: white;    
+    }
+    
+    .formulaire input{
+        margin:  auto; 
+        text-align: center;
+        padding: 15px;  
+        width: 167px;
+        border-radius: 24px;
+        margin-bottom: 10px;
+    }
+    
+    
+    #boutton-verification-compte{
+        width: 250px;  
+     }
+    
+    footer{
+        width: 100%;
+      
+     }
+    
+    
+     .conteneur-image-partenaires img {
+         width: 500px;
+     }
+    
+    
+     
+    
+    
+    
+     
+    } */
