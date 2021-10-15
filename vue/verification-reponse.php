@@ -36,13 +36,13 @@
          <!--------------------------------------------------------------------------------NOM D'UTILISATEUR-------------------------------------------------------------------------------->
         <tr>
                 <td>
-                    <label class="label-verification-reponse" for="nomutilisateur">Nom d'utilisateur :</label>
+                    <label class="label-verification-reponse" for="nom_utilisateur">Nom d'utilisateur :</label>
                 </td>
 
                 <td>
     
             <p>
-            <?php echo $_SESSION['nomutilisateur']; ?>
+            <?php echo $_SESSION['nom_utilisateur']; ?>
             </p>
                 </td>
         </tr>

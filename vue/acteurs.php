@@ -36,10 +36,8 @@ session_start();
    <head>
    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-       <meta charset="UTF-8">
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
       <title> <?php echo htmlspecialchars($donnees['titre']); ?></title>
 
@@ -68,7 +66,8 @@ session_start();
             </div>
    </header> 
        <!--------------------------------------------------------------------------------PRESENTATION DES PARTENAIRES-------------------------------------------------------------------------------->
-   <div class="page">
+   <main class="page">
+   <div class="page-accueil-acteurs"> 
          <!--------------------------------------------------------------------------------PRESENTATION DU PARTENAIRE---------------------------------------------------------------------------->
         
   <section class="conteneur-page-partenaires">
@@ -217,6 +216,7 @@ session_start();
     </section>
 
     </div>
+            </main>
 
                 <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------->
     <footer>

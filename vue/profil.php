@@ -16,6 +16,7 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
             <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
             <title>profil</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
             <link rel="stylesheet" href="../style/style.css" />          
         </head>
@@ -43,6 +44,8 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
 
               
             <!--------------------------------------------------------------------------------PROFIL -------------------------------------------------------------------------------->
+            
+  <main class="page"> 
             <div id="page-modification"> 
                 
                 <h1>
@@ -72,7 +75,7 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
             </p>
 
             <p>
-                Nom d'utilisateur : <?php echo $userinfo['nomutilisateur']; ?>
+                Nom d'utilisateur : <?php echo $userinfo['nom_utilisateur']; ?>
             </p>
             
             </div>
@@ -97,6 +100,7 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
             </div>
             
             <!--------------------------------------------------------------------------------FOOTER ----------------------------------------------------------------->
+  </main>
     <footer>
             <a href="#">
         <p>

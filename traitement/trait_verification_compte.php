@@ -9,14 +9,14 @@ if(isset($_POST['recup_submit']))
 
 {
     //Proteger la variable et le simplifier
-    $recup_nomutilisateur = htmlspecialchars($_POST['recup_nomutilisateur']);
+    $recup_nom_utilisateur = htmlspecialchars($_POST['recup_nom_utilisateur']);
    //Si le champ est remplis
-    if(!empty($recup_nomutilisateur))
+    if(!empty($recup_nom_utilisateur))
 
     {
         //Sectionne toutes les entre de la table membres (nom de la base de données) avec le nom d'utilisateur pour vérifier si le nom d'utilisateur existe
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE nomutilisateur = ?");
-        $requser->execute(array($recup_nomutilisateur));
+        $requser = $bdd->prepare("SELECT * FROM membres WHERE nom_utilisateur = ?");
+        $requser->execute(array($recup_nom_utilisateur));
         //Compter les numéro de colonne qu'existe
         $userexist = $requser->rowCount();
         if($userexist == 1)
@@ -26,8 +26,8 @@ if(isset($_POST['recup_submit']))
 
             //Recevoir les informations dans les variables de SESSION
             $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['nomutilisateur'] = $userinfo['nomutilisateur'];
-            $_SESSION['motdepasse'] = $userinfo['motdepasse'];
+            $_SESSION['nom_utilisateur'] = $userinfo['nom_utilisateur'];
+            $_SESSION['mot_de_passe	'] = $userinfo['mot_de_passe	'];
             $_SESSION['question'] = $userinfo['question'];
             $_SESSION['reponse'] = $userinfo['reponse'];
             

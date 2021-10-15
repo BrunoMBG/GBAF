@@ -42,11 +42,11 @@ if(isset($_GET['type'],$_GET['id']) AND !empty($_GET['type']) AND !empty($_GET['
             $ins->execute(array($getid, $sessionid));
          }
       }
-      header ('Location: http://localhost/GBAF/vue/page_partenaire.php?partenaire='.$getid);
+      header ('Location: http://localhost/GBAF/vue/acteurs.php?partenaire='.$getid);
      
    } else {
       exit('Erreur fatale');
-      // echo $getid;
+      
 
    }
 } else {

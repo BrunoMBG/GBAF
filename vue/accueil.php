@@ -5,15 +5,15 @@ session_start();
 
 
 <!DOCTYPE html>
+
 <html lang="fr">
    <head>
-      <!-- <meta name="viewport" content="width=device-width">    -->
       <title>Accueil</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
       <link rel="stylesheet" href="../style/style.css" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    </head>
+
    <body>
       
    <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
@@ -23,21 +23,27 @@ session_start();
                <a href="accueil.php"><img src="../Images\logo_gbaf.png"></a>
 
             <div id="menu">
-            
+                  
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
                      <p>
                         <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?>  
                      </p>
                </a>
+
+               <div>
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
+               </div>
+
             </div>
          </header>
 
 
   <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
-  <div class="page"> 
-      <div id="presentation">
+
+  <main class="page">
+     <div class="page-accueil-acteurs"> 
+      <section id="presentation">
        
             <h1>
                GBAF (Groupement Banque Assurance Français) </br></br>
@@ -63,10 +69,10 @@ session_start();
             <img src="../images/intro.jpg"!> 
 
        
-    </div>
+    </section>
 
    <!------------------------------------------------------------------------------- PARTENAIRES -------------------------------------------------------------------------------->
-      <section id="conteneur-partenaires"> 
+      <section id="conteneur-acteurs"> 
 
          <h2>
             Acteurs et partenaires du système bancaire français
@@ -99,20 +105,20 @@ session_start();
             ?>
 
                <!-- ARTICLES PARTENAIRES -->
-         <article class="partenaires">
+         <article id="acteurs">
 
                <!-- LOGO -->
-            <div> 
+            <div id="image-partenaires"> 
                <?php
-                  echo "<img src='./../Images/".$donnees['logo']."' ><br>";  
+                  echo "<img src='./../Images/".$donnees['logo']."' >";  
                ?>
             </div>
                <!-- TITRE ET CONTENU -->
             <div>
 
-               <h2>
+               <h3>
                   <?php echo htmlspecialchars($donnees['titre']); ?>
-               </h2>
+               </h3>
 
                <p>
                   <?= substr($donnees['contenu'], 0, 69) . '...'; ?>
@@ -122,7 +128,7 @@ session_start();
 
                <!-- BOUTON LIRE LA SUITE, RECUPERER L'ID DE LA PAGE ET L'ID D'utilisateur -->
             <div>             
-               <a href="page_partenaire.php?partenaire=<?php echo $donnees['id']; ?>&id=<?php echo $_SESSION['id']; ?>"><button class="buttonpartenaires">Lire la suite</button></a>
+               <a href="acteurs.php?partenaire=<?php echo $donnees['id']; ?>&id=<?php echo $_SESSION['id']; ?>"><button id="button-acteurs">Lire la suite</button></a>
             </div>
 
          </article>
@@ -133,8 +139,8 @@ session_start();
              $req->closeCursor();
          ?>
       </section>
-
-      </div>
+     </div>
+ </main>
 
    <!-------------------------------------------------------------------------------FOOTER -------------------------------------------------------------------------------->
      

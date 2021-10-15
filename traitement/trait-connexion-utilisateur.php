@@ -19,7 +19,7 @@ if(isset($_POST['boutton_connexion']))
     {
          
          //Vérifier si le nom d'utilisateur et le mot de passe existe dans la base de données
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE nomutilisateur = ? AND motdepasse = ?");
+        $requser = $bdd->prepare("SELECT * FROM membres WHERE nom_utilisateur = ? AND mot_de_passe	 = ?");
         $requser->execute(array($utilisateurconnexion, $mdpconnexion));
 
          //Compter les numéro de colonne qu'existe
@@ -33,8 +33,8 @@ if(isset($_POST['boutton_connexion']))
             $_SESSION['id'] = $userinfo['id'];
             $_SESSION['nom'] = $userinfo['nom'];
             $_SESSION['prenom'] = $userinfo['prenom'];
-            $_SESSION['nomutilisateur'] = $userinfo['nomutilisateur'];
-            $_SESSION['motdepasse'] = $userinfo['motdepasse'];
+            $_SESSION['nom_utilisateur'] = $userinfo['nom_utilisateur'];
+            $_SESSION['mot_de_passe	'] = $userinfo['mot_de_passe	'];
             $_SESSION['question'] = $userinfo['question'];
             $_SESSION['reponse'] = $userinfo['reponse'];
             

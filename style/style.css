@@ -1,17 +1,27 @@
  
- /* ------------------------------------------------------------------------------BODY DU SITE------------------------------------------------------------------------------*/
+
  *{
     margin: 0;
     padding: 0;
  }
- 
- 
+ html{
+    height: 100%; 
+ }
+
+ body{
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+ }
  
 
  /* ------------------------------------------------------------------------------TOUS LES LIENS------------------------------------------------------------------------------*/
  a{
     text-decoration: none;
  }
+
+ 
 
  
  /* ------------------------------------------------------------------------------TOUS LES INPUT-----------------------------------------------------------------------------*/
@@ -22,11 +32,15 @@
 
 /* ------------------------------------------------------------------------------PAGE DU SITE------------------------------------------------------------------------------*/
  .page{
-    width: 95%; 
-   margin: auto;
+  
+   padding-bottom: 50px;
+   /* position:relative; */
 }
 
-
+.page-accueil-acteurs{
+  width: 95%; 
+   margin: auto;
+}
 
 /* ------------------------------------------------------------------------------HEADER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
  .header{
@@ -94,6 +108,7 @@
 #boutton-formulaire-connexion-connecter:hover {
     background-color:rgba(255, 16, 16, 0.925);
 }
+
 #boutton-formulaire_connexion-creer-compte {
     color: white;
     background-color: red;
@@ -115,15 +130,11 @@
     padding: 20px 20px; 
     width: 800px;
     background-color: white;
-    
 }
 
 #conteneur-formulaire-inscription h1 {
-
     margin: 10px 0 15px 0;
 }
-
-
 
 .label-inscription {
     font-size: 25px;   
@@ -163,6 +174,7 @@
 #formulaire-retrouvez-compte h2 {
     margin: 15px 0 20px 0;
 }
+
 #formulaire-retrouvez-compte input{
     margin:  auto; 
     text-align: center;
@@ -183,9 +195,7 @@
     background-color: red;
     opacity: 0.8;
     width: 450px;
-    border: none;
-    
-    
+    border: none;  
  }
 
  /* ------------------------------------------------------------------------------FORMULAIRE DE VERIFICATION REPONSE------------------------------------------------------------------------------*/
@@ -194,7 +204,7 @@
     text-align: center;
     border-radius: 30px;
     box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
-    padding: 20px 20px; 
+    padding: 20px 20px 0 0; 
     width: 800px;
     background-color: white;
 }
@@ -204,8 +214,6 @@
 }
 
 #formulaire-verification-reponse input {
-    margin:  auto; 
-    text-align: center;
     padding: 15px;  
     border-radius: 24px;
 }
@@ -214,7 +222,6 @@
     border-bottom: 1px red solid;
     padding-bottom: 10px;
     margin: 15px 0 15px 0;
-    width: 600px;
 }
 
 
@@ -280,28 +287,7 @@
     width: 450px;
     border: none;
 }
- /* ------------------------------------------------------------------------------FOOTER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
-footer{
-    background-color: #0c0c0cc2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; 
-}
 
-footer p {
-    font-size: 20px;
-    border-left: 2px white solid;
-    margin: 0 5px 0 5px;
-    color: white; 
-    padding: 0 10px 0 10px; 
-}
-
-#contactfooter{
-    border-right: 2px white solid;
-    padding-right: 10px;
-}
- 
 
  /* ------------------------------------------------------------------------------PAGE DE ACCUEIL ------------------------------------------------------------------------------*/
 
@@ -323,7 +309,7 @@ footer p {
 
 #menu p{
     font-size: 30px;
-    margin: 0;
+    /* margin: 0; */
  }
 
 .icone-deconnexion{
@@ -331,16 +317,16 @@ footer p {
     margin-right: 20px;
 }
 
-#conteneur-partenaires{
+#conteneur-acteurs{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
     padding: 15px 15px 5px 15px;
     margin-bottom: 50px;
 }
-#conteneur-partenaires h2{
+#conteneur-acteurs h2{
     text-align: center;
     margin-bottom: 30px;
 }
-#conteneur-partenaires p{
+#conteneur-acteurs p{
     font-size: 25px;
     text-align: center;
 }
@@ -369,29 +355,30 @@ footer p {
    margin: 10px 0 10px 0;
 } 
 
-.partenaires{
+#acteurs{
     display: flex;  
-    height: 200px;
+    /* height: 200px; */
     position: relative;
     margin: 30px 0 30px 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.partenaires img{
+#acteurs img{
      height: 130px;
      width: 300px;
-     padding-right: 30px;
-     padding-left: 30px;
+     /* padding-right: 30px;
+     padding-left: 30px; */
+     padding: 0 30px 0 30px ;
      margin: 35px auto;
      align-items: center; 
 }
 
-.partenaires h2{
+#acteurs h3{
     font-size: 30px;
     margin-top: 20px;
 }
 
-.buttonpartenaires{
+#button-acteurs{
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -665,117 +652,379 @@ footer p {
         border: none;
     }
 
+ /* ------------------------------------------------------------------------------FOOTER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
+ footer{
+    background-color: #0c0c0cc2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; 
+width: 100%;
+    position:absolute;
+    bottom:0;
+    margin-top: 450px;
+    
+}
 
-/* ------------------------------------------------------------------------------  RESPONSIVE, MOBILE ------------------------------------------------------------------------------*/
-/* @media screen and (min-width: 320px) and (max-width: 680px)  { 
+footer p {
+    font-size: 20px;
+    border-left: 2px white solid;
+    margin: 0 5px 0 5px;
+    color: white; 
+    padding: 0 10px 0 10px; 
+}
+
+#contactfooter{
+    border-right: 2px white solid;
+    padding-right: 10px;
+}
  
-    .header{
-        padding-bottom: 20px;
+/* ------------------------------------------------------------------------------  RESPONSIVE, MOBILE ------------------------------------------------------------------------------*/
+/* @media screen and (min-width: 280px) and (max-width: 680px)   */
+@media screen    and (max-width: 580px)  
+{ 
    
-       
-       
+    /* PAGE DE CONNEXION */
+    #conteneur-formulaire-connexion  {
+        margin: 30px auto;
+        width: 75%;
+    }
+
+
+    /* PAGE D'INSCRIPTION */
+    #conteneur-formulaire-inscription {
+        margin: 30px auto;
+        width: 75%;
+    }
+
+    .champs {
+        width: 85px;
+    }
+
+    #boutton-formulaire-inscription {
+        width: 100px;
+    }
+
+
+    /* PAGE VERIFICATION DE COMPTE */
+    #conteneur-formulaire-retrouvez-compte {
+        width: 80%;
+    }
+
+    #boutton-verification-compte {
+        width: 180px;
+    }
+
+
+    /* PAGE VERIFICATION REPONSE */
+    #conteneur-formulaire-verification-reponse {
+        margin: 30px auto;
+        width: 80%;
     }
     
-    #page {
-        width: 95%;
+    #formulaire-verification-reponse p {
+        font-size: 23px;
     }
     
-    #presentation{
+    #champ-verification-reponse{
+        width: 120px;
+    }
+    
+    #boutton-formulaire-verification-reponse {
+        width: 120px;
+    }
+    
+
+    /* PAGE CHANGER MOT DE PASSE */
+    #conteneur-formulaire-changer-mdp {
+        margin: 30px auto;
+        width: 80%;
+    }
+    
+    #conteneur-formulaire-changer-mdp h2 {
+        margin: 15px 0 20px 0;
+    }
+    
+    .champ_mdp {
+        padding: 15px;  
+        border-radius: 24px;
+        width: 90px;   
+    }
+    
+    #boutton-formulaire-changer_mdp {
+        width: 120px;  
+        white-space: normal;
+    }
+
+
+    /* Page d'accueil */
+    .header {
         text-align: center;
-        margin: auto;
-        width: 563px;
-        margin-bottom: 50px; 
+        display: block;
+    }
+
+    .header img{
+        height: 90px;  
+        width: 90px;
+        margin-bottom: 20px;
     }
     
-    #presentation h1{
-        padding-top: 20px;
-        font-size: 35px;
+    #menu {
+     justify-content: center;
     }
-    
-    #presentation p{
-        text-align: center;
-    }
-    
-    #presentation h3{
-        font-size: 28px;
-    }
-    
-    
-    #conteneur-partenaires{
-        width: 535px;
-    }
-    
-    #conteneur-partenaires h2{
-        font-size: 30px;
-    }
-    
-    #conteneur-partenaires p{
+
+     #menu a {
+      text-align: center; 
+    } 
+
+    #menu p {
         font-size: 25px;
-        text-align: center;
+    }
+
+    .icone-profil{
+        font-size: 25px;
+        margin: auto;
+        display: block;
+        margin-right: 20px;
+    }
+
+    .icone-deconnexion {
+         font-size: 25px;
     }
     
-    .buttonpartenaires {
-        padding: 20px;
+   #acteurs{
+        height: 400px;   
+        display: block;
+    }
+
+    #acteurs img {
+        padding: 0;
+        width: 200px;
+    }
+
+    #image-partenaires {
+        text-align: center;
+    }
+
+
+    #acteurs h3{
+        font-size: 23px;
+        margin-top: -20px;
+        margin-left: 15px;
+    }
+
+   
+
+    /* PAGE PARTENAIRE */
+   
+   
+    .conteneur-image-partenaires img {
+        width: 285px;
+    }
+
+    .conteneur-commentaire-like {
+        display: block;
+    }
+
+    .likes {
+        margin: auto;
+        box-shadow: none;
+        padding: 0;
+        display: block;
+      text-align: center;
+    }
+
+    .likes i {
+        margin-left: 10px;
+    }
+
+    .nouveau_commentaire {
+        margin: 0;
+        padding: 25px 0 25px 10px;
+        box-shadow: none;
+    }
+
+  
+    .bouton_commentaires {
+        width: 110px;
+        white-space: normal;
+    } 
+
+   
+    .bouton_commentaires_like {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+        width: 100%;
+        margin-top: 10px;    
+    }
+  
+    .commentaires {
+        width: 75%;
+    }
+
+    /* PAGE DE PROFIL */
+
+    #nom-du-profil {
+        /* background-color: red; */
+        width: 90%;
+    }
+
+    .a-propos-de-moi {
+        width: 90%;
+    }
+    .a-propos-de-moi p {
+        font-size: 20px;
+    }
+
+
+    #button-page-de-profil {
+        width: 250px;
+    }
+
+    /* PAGE DE MODIFICATION DE PROFIL */
+    #conteneur-formulaire-modification {
+        width: 80%;
+    }
+    #formulaire-modification input {
+        width: 100px;
+    }
+
+    #button-modification {
+        /* width: 150px; */
+       
+        white-space: normal;
+    }
+
+   
+
+
+     
+    
+    
+    
+     
+    } 
+
+
+    /* Tablette */
+    @media screen and (min-width: 580px) and (max-width: 1024px) {
+
+        /* PAGE DE CONNEXION */
+        #conteneur-formulaire-connexion  {
+            width: 80%;
+        }
+
+        #conteneur-formulaire-connexion  a{
+            font-size: 20px;
+        }
+
+        #formulaire-connexion input{
+            font-size: 20px;
+        }
+
+           /* PAGE D'INSCRIPTION */
+    #conteneur-formulaire-inscription {
+        width: 80%;
+    }
+
+    .champs {
+        width: 300px;
+    }
+
+    #boutton-formulaire-inscription {
+        font-size: 20px;
+    }
+
+    
+    /* PAGE VERIFICATION DE COMPTE */
+    #conteneur-formulaire-retrouvez-compte {
+        width: 80%;
+    }
+
+    #formulaire-retrouvez-compte input {
+        font-size: 20px;
+    }
+
+
+    /* PAGE VERIFICATION REPONSE */
+    #conteneur-formulaire-verification-reponse {
+        width: 80%;
+    }
+
+  
+
+    #formulaire-verification-reponse input {
         font-size: 20px;
     }
     
-    
-    .partenaires {
-        background-color: white;
-        height: 345px;  
-        padding-right: 10px;
+    #formulaire-verification-reponse p {
+        font-size: 23px;
     }
     
-    .partenaires img {
-        height: 160px;
-        width: 250px;
-        margin: 15% auto;
+    #champ-verification-reponse{
+        width: 350px;
+    }
+
+
+     /* PAGE CHANGER MOT DE PASSE */
+     #conteneur-formulaire-changer-mdp {
+        width: 80%;
     }
     
-    
-    .partenaires p {
-      font-size: 10px;
+    .champ_mdp {
+        width: 400px;   
     }
     
+    #boutton-formulaire-changer_mdp {
+        font-size: 20px;
+    } 
     
-     .conteneur-formulaire{
-        margin: 200px auto;
-        text-align: center;
-        border-radius: 30px;
-        box-shadow: 12px 12px 12px 12px rgba(255, 0, 0, 0.993); 
-        padding: 20px 20px; 
-        width: 290px;
-        background-color: white;    
+
+    /* PAGE D'ACCUEIL */
+
+    #button-acteurs {
+        bottom: 15px;
     }
-    
-    .formulaire input{
-        margin:  auto; 
-        text-align: center;
-        padding: 15px;  
-        width: 167px;
-        border-radius: 24px;
-        margin-bottom: 10px;
+
+    #acteurs{
+        height: 300px;   
+        /* display: block; */
     }
-    
-    
-    #boutton-verification-compte{
-        width: 250px;  
-     }
-    
-    footer{
-        width: 100%;
-      
-     }
-    
-    
-     .conteneur-image-partenaires img {
-         width: 500px;
-     }
-    
-    
-     
-    
-    
-    
-     
-    } */
+
+    #acteurs h3 {
+        font-size: 25px;
+    }
+
+    /* PAGE ACTEURS */
+    .likes {
+        width: 130px;
+    }
+
+    .conteneur-commentaire input {
+        width: 130px;
+        white-space: normal;
+        font-size: 15px;
+    }
+
+    .nouveau_commentaire {
+        padding: 15px;
+    }
+
+    /* PAGE DE PROFIL */
+
+    #conteneur-formulaire-modification {
+        width: 80%;
+    }
+
+    #formulaire-modification input {
+        width: 400px;
+    }
+
+    #button-modification {
+        font-size: 16px;
+    }
+
+    .champ-modification-profil {
+        font-size: 20px;
+    }
+
+    }

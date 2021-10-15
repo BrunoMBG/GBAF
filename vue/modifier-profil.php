@@ -46,6 +46,8 @@
 
                 
         <!--------------------------------------------------------------------------------TITRE DE LA PAGE------------------------------------------------------------->
+        <main class="page"> 
+
              <div id="page-modification"> 
                 
                 <h1>
@@ -91,7 +93,7 @@
                 </td>
 
                 <td>
-                        <input type ="text" class="champ-modification-profil" name ="newnomutilisateur"  value="<?php echo $_SESSION['nomutilisateur']; ?>"/>
+                        <input type ="text" class="champ-modification-profil" name ="newnom_utilisateur"  value="<?php echo $_SESSION['nom_utilisateur']; ?>"/>
                 </td>
         </tr>
                  <!-- MODIFICATION DU MOT DE PASSE-->
@@ -151,11 +153,15 @@
             </form>
 
             </div>
+
+       
            
           
           
 
             </form> 
+
+</main>
             
  <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
       

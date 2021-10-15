@@ -31,11 +31,11 @@ if(isset($_SESSION['id']))
         header('Location: profil.php?id='.$_SESSION['id']);
     }
      //MODIFIER LE NOM D'UTILISATEUR
-    if(isset($_POST['newnomutilisateur']) AND !empty($_POST['newnomutilisateur']) AND $_POST['newnomutilisateur'] != $user['nomutilisateur']) 
+    if(isset($_POST['newnom_utilisateur']) AND !empty($_POST['newnom_utilisateur']) AND $_POST['newnom_utilisateur'] != $user['nom_utilisateur']) 
     {
-        $newnomutilisateur = htmlspecialchars($_POST['newnomutilisateur']);
-        $insertutilisateur = $bdd->prepare("UPDATE membres SET nomutilisateur = ? WHERE id = ?");
-        $insertutilisateur->execute(array($newnomutilisateur, $_SESSION['id']));
+        $newnom_utilisateur = htmlspecialchars($_POST['newnom_utilisateur']);
+        $insertutilisateur = $bdd->prepare("UPDATE membres SET nom_utilisateur = ? WHERE id = ?");
+        $insertutilisateur->execute(array($newnom_utilisateur, $_SESSION['id']));
         header('Location: profil.php?id='.$_SESSION['id']);
     }
      //MODIFIER LE MOT DE PASSE
@@ -48,7 +48,7 @@ if(isset($_SESSION['id']))
         
         if($mdp == $mdp2)
         {
-            $insetmdp = $bdd->prepare("UPDATE membres SET motdepasse = ? WHERE id = ?");
+            $insetmdp = $bdd->prepare("UPDATE membres SET mot_de_passe	 = ? WHERE id = ?");
             $insetmdp->execute(array($mdp, $_SESSION['id']));
             header('Location: profil.php?id='.$_SESSION['id']);
         }

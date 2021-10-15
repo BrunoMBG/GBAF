@@ -61,13 +61,13 @@
              <!-- CHAMP NOM D'UTILISATEUR -->
         <tr>
                 <td>
-                    <label class="label-inscription" for="nomutilisateur">Nom d'utilisateur:</label>
+                    <label class="label-inscription" for="nom_utilisateur">Nom d'utilisateur:</label>
                 </td>
 
                 <td>
-                    <input type="text" class="champs" id="nomutilisateur" name="nomutilisateur" value="<?php if (isset($nomutilisateur))
+                    <input type="text" class="champs" id="nom_utilisateur" name="nom_utilisateur" value="<?php if (isset($nom_utilisateur))
 {
-    echo $nomutilisateur;
+    echo $nom_utilisateur;
 } ?>" />
                 </td>
         </tr>
