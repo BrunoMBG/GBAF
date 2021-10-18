@@ -3,10 +3,10 @@
  
 
 
-//  if (!isset($_SESSION['id']))
-// {
-//    header('Location: index.php');
-// }
+ if (!isset($_SESSION['id']))
+{
+   header('Location: ../index.php');
+}
 ?>
         <!DOCTYPE html>
         <html lang="fr">

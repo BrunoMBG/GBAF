@@ -12,10 +12,10 @@ if (isset($_POST['boutton_inscription']))
     $nom_utilisateur = htmlspecialchars($_POST['nom_utilisateur']);
     $question = htmlspecialchars($_POST['question']);
     $reponse = htmlspecialchars($_POST['reponse']);
-    $mdp = sha1($_POST['mdp']);
-    $mdp2 = sha1($_POST['mdp2']);
-    // $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-    // $mdp2 = password_hash($_POST['mdp2'], PASSWORD_DEFAULT);
+    // $mdp = sha1($_POST['mdp']);
+    // $mdp2 = sha1($_POST['mdp2']);
+    $mdp = hash('sha256', $_POST['mdp']);
+    $mdp2 = hash('sha256', $_POST['mdp2']);
 
     //Si les champs sont remplis
     if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['nom_utilisateur']) and !empty($_POST['mdp']) and !empty($_POST['mdp2']) and !empty($_POST['question']) and !empty($_POST['reponse']))
@@ -27,7 +27,7 @@ if (isset($_POST['boutton_inscription']))
 
         // Sectionne toutes les entre de la table membres (nom de la base de données) avec le nom d'utilisateur pour vérifier si le nom d'utilisateur existe
         {
-            $reqnom_utilisateur = $bdd->prepare("SELECT * FROM membres WHERE nom_utilisateur = ?");
+            $reqnom_utilisateur = $bdd->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ?");
             $reqnom_utilisateur->execute(array(
                 $nom_utilisateur
             ));
@@ -41,7 +41,7 @@ if (isset($_POST['boutton_inscription']))
 
                 {
                     //Si toutes les conditions sont respecter, les données sont ajouter dans la base de données
-                    $insertmbr = $bdd->prepare("INSERT INTO membres(nom, prenom, nom_utilisateur, mot_de_passe	, question, reponse  ) VALUES (?, ?, ?, ?, ?, ?) ");
+                    $insertmbr = $bdd->prepare("INSERT INTO utilisateurs(nom, prenom, nom_utilisateur, mot_de_passe	, question, reponse  ) VALUES (?, ?, ?, ?, ?, ?) ");
                     $insertmbr->execute(array(
                         $nom,
                         $prenom,

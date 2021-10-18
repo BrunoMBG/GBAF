@@ -58,9 +58,11 @@ session_start();
             
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
+
                   <p>
                   <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?>  
                   </p>
+                  
                </a>
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
             </div>
@@ -135,7 +137,7 @@ session_start();
 
                   </div>
 
-                        </div> </br>
+                        </div> 
 
 
                   <div>
@@ -202,13 +204,13 @@ session_start();
                    <!--------------------------------------------------------------------------------FORMULAIRE-------------------------------------------------------------------------->
                   <form  id="aller_EnBas" class="conteneur-form-commentaire" method="POST"> 
 
-                  <textarea   name="commentaire" placeholder="Votre commentaire" class="form-commentaire"></textarea> </br></br>
+                  <textarea   name="commentaire" placeholder="Votre commentaire" class="form-commentaire"></textarea> 
              
-                     <input class="submit-form" type="submit" value="Poster mon commentaire" name="submit_commentaire"/></br></br>
+                     <input class="submit-form" type="submit" value="Poster mon commentaire" name="submit_commentaire"/>
 
                   <?php
-                  if(isset($commentaire_erreur)) { echo $commentaire_erreur; } 
-                   ?> </br>
+                  // if(isset($commentaire_erreur)) { echo $commentaire_erreur; } 
+                   ?> 
                   </form>
                </div>
 

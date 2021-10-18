@@ -46,7 +46,7 @@
            
             <label id="label-verification-compte"> Nom d'utilisateur : </label>
 
-        <input mtype="text" id="verification" name="recup_nom_utilisateur" placeholder="Entre le nom d'utilisateur"/>  </br></br>
+        <input mtype="text" id="verification" name="recup_nom_utilisateur" placeholder="Entre le nom d'utilisateur"/>  
 
             </div>
             

@@ -55,7 +55,7 @@ include '../traitement/trait-changer-mdp.php';
                 </td>
 
                 <td>
-                    <input type="password" class="champ_mdp" id="mdp2" name="recup_mdp2" /></br></br>
+                    <input type="password" class="champ_mdp" id="mdp2" name="recup_mdp2" />
                 </td>
 
         </tr> 

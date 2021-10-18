@@ -8,7 +8,7 @@ if(isset($_SESSION['id']))
 
 {
     //DEMANDER LES INFORMATIONS DANS LA BASE DE DONNÉES
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
+    $requser = $bdd->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     //EXÉCUTER LA DEMANDE
     $requser->execute(array($_SESSION['id']));
     //RECUPERATION DE DONNÉES
@@ -18,7 +18,7 @@ if(isset($_SESSION['id']))
     if(isset($_POST['newnom']) AND !empty($_POST['newnom']) AND $_POST['newnom'] != $user['nom']) 
     {
         $newnom = htmlspecialchars($_POST['newnom']);
-        $insertnom = $bdd->prepare("UPDATE membres SET nom = ? WHERE id = ?");
+        $insertnom = $bdd->prepare("UPDATE utilisateurs SET nom = ? WHERE id = ?");
         $insertnom->execute(array($newnom, $_SESSION['id']));
         header('Location: profil.php?id='.$_SESSION['id']);
     }
@@ -26,7 +26,7 @@ if(isset($_SESSION['id']))
     if(isset($_POST['newprenom']) AND !empty($_POST['newprenom']) AND $_POST['newprenom'] != $user['prenom']) 
     {
         $newprenom = htmlspecialchars($_POST['newprenom']);
-        $insertprenom = $bdd->prepare("UPDATE membres SET prenom = ? WHERE id = ?");
+        $insertprenom = $bdd->prepare("UPDATE utilisateurs SET prenom = ? WHERE id = ?");
         $insertprenom->execute(array($newprenom, $_SESSION['id']));
         header('Location: profil.php?id='.$_SESSION['id']);
     }
@@ -34,7 +34,7 @@ if(isset($_SESSION['id']))
     if(isset($_POST['newnom_utilisateur']) AND !empty($_POST['newnom_utilisateur']) AND $_POST['newnom_utilisateur'] != $user['nom_utilisateur']) 
     {
         $newnom_utilisateur = htmlspecialchars($_POST['newnom_utilisateur']);
-        $insertutilisateur = $bdd->prepare("UPDATE membres SET nom_utilisateur = ? WHERE id = ?");
+        $insertutilisateur = $bdd->prepare("UPDATE utilisateurs SET nom_utilisateur = ? WHERE id = ?");
         $insertutilisateur->execute(array($newnom_utilisateur, $_SESSION['id']));
         header('Location: profil.php?id='.$_SESSION['id']);
     }
@@ -48,7 +48,7 @@ if(isset($_SESSION['id']))
         
         if($mdp == $mdp2)
         {
-            $insetmdp = $bdd->prepare("UPDATE membres SET mot_de_passe	 = ? WHERE id = ?");
+            $insetmdp = $bdd->prepare("UPDATE utilisateurs SET mot_de_passe	 = ? WHERE id = ?");
             $insetmdp->execute(array($mdp, $_SESSION['id']));
             header('Location: profil.php?id='.$_SESSION['id']);
         }
@@ -60,7 +60,7 @@ if(isset($_SESSION['id']))
      if(isset($_POST['newquestion']) AND !empty($_POST['newquestion']) AND $_POST['newquestion'] != $user['question']) 
      {
          $newquestion = htmlspecialchars($_POST['newquestion']);
-         $insertquestion = $bdd->prepare("UPDATE membres SET question = ? WHERE id = ?");
+         $insertquestion = $bdd->prepare("UPDATE utilisateurs SET question = ? WHERE id = ?");
          $insertquestion->execute(array($newquestion, $_SESSION['id']));
          header('Location: profil.php?id='.$_SESSION['id']);
      }
@@ -69,7 +69,7 @@ if(isset($_SESSION['id']))
      if(isset($_POST['newreponse']) AND !empty($_POST['newreponse']) AND $_POST['newreponse'] != $user['reponse']) 
      {
          $newreponse = htmlspecialchars($_POST['newreponse']);
-         $insertreponse = $bdd->prepare("UPDATE membres SET reponse = ? WHERE id = ?");
+         $insertreponse = $bdd->prepare("UPDATE utilisateurs SET reponse = ? WHERE id = ?");
          $insertreponse->execute(array($newreponse, $_SESSION['id']));
          header('Location: profil.php?id='.$_SESSION['id']);
      }

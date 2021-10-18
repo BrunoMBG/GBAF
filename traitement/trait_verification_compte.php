@@ -15,7 +15,7 @@ if(isset($_POST['recup_submit']))
 
     {
         //Sectionne toutes les entre de la table membres (nom de la base de données) avec le nom d'utilisateur pour vérifier si le nom d'utilisateur existe
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE nom_utilisateur = ?");
+        $requser = $bdd->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ?");
         $requser->execute(array($recup_nom_utilisateur));
         //Compter les numéro de colonne qu'existe
         $userexist = $requser->rowCount();

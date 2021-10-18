@@ -22,7 +22,7 @@
             //Changement de mot de passe
             if($recup_mdp == $recup_mdp2)
             {
-                $reqrecup_mdp = $bdd->prepare("UPDATE membres SET mot_de_passe	 = ? WHERE id = ?");
+                $reqrecup_mdp = $bdd->prepare("UPDATE utilisateurs SET mot_de_passe	 = ? WHERE id = ?");
                 $reqrecup_mdp->execute(array($recup_mdp, $_SESSION['id']));
                 // header('Location: profil.php?id='.$_SESSION['id']);
                 // 

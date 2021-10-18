@@ -11,7 +11,8 @@ if(isset($_POST['boutton_connexion']))
    
      //Proteger les variables et les simplifier
     $utilisateurconnexion = htmlspecialchars($_POST['utilisateurconnexion']);
-    $mdpconnexion = sha1($_POST['mdpconnexion']);
+    // $mdpconnexion = sha1($_POST['mdpconnexion']);
+    $mdpconnexion = hash('sha256', $_POST['mdpconnexion']);
     // $mdpconnexion = password_hash($_POST['mdpconnexion'], PASSWORD_DEFAULT);
 
      //Si le champ est remplis
@@ -19,7 +20,7 @@ if(isset($_POST['boutton_connexion']))
     {
          
          //Vérifier si le nom d'utilisateur et le mot de passe existe dans la base de données
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE nom_utilisateur = ? AND mot_de_passe	 = ?");
+        $requser = $bdd->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ? AND mot_de_passe	 = ?");
         $requser->execute(array($utilisateurconnexion, $mdpconnexion));
 
          //Compter les numéro de colonne qu'existe

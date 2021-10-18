@@ -2,6 +2,10 @@
 <?php
  include 'traitement/trait-connexion-utilisateur.php';
  
+ if (isset($_SESSION['id']))
+ {
+    header('Location: ./vue/accueil.php');
+ }
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +57,7 @@
           <a href="./vue/inscription.php"> <input type="button" value="Créer un compte" id="boutton-formulaire_connexion-creer-compte"></a>
           
 
-            </form> </br>
+            </form> 
             
  <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
             <?php 
@@ -66,9 +70,6 @@
       
            
              </div> 
-
-        </div>
-
       
 
         </body>

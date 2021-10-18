@@ -180,6 +180,7 @@
     text-align: center;
     padding: 15px;  
     border-radius: 24px;
+    margin: 15px;
 }
 
 #label-verification-compte{
@@ -268,12 +269,14 @@
     padding: 15px;  
     border-radius: 24px;
     margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .champ_mdp {
     padding: 15px;  
     border-radius: 24px;
     width: 540px;   
+    margin-bottom: 500px;
 }
 
 .label-changer-mdp {
@@ -340,6 +343,7 @@
 #presentation h1{
     padding-top: 20px;
     font-size: 35px;
+    margin-bottom: 20px;
 }
 
 #presentation h3{
@@ -556,10 +560,34 @@
         align-items: center;
         width: 95%;
         margin: auto;
+        margin-bottom: 40px;
      
     }
     .conteneur-commentaire-like p{
         font-size: 40px;
+    }
+
+    .conteneur-form-commentaire{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+  
+
+    .form-commentaire{
+        width: 95%;
+        margin-top: 30px;
+        height: 200px;
+       align-items: center;
+       margin-bottom: 20px;
+    }
+
+    
+    .submit-form{
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        border: none;
+        margin-bottom: 200px;
     }
          /* -----------------------BOUTTON DE NOUVEAU COMMENTAIRE ET LIKES/DISLIKES-----------------------*/
     .bouton_commentaires_like{
@@ -628,30 +656,7 @@
     .commentaires p {
         font-size: 20px;
     }
-
-         
- /* ------------------------------------------------------------------------------   FORMULAIRE ------------------------------------------------------------------------------*/
-   
-    .conteneur-form-commentaire{
-        text-align: center;
-    }
   
-
-    .form-commentaire{
-        width: 95%;
-        margin-top: 30px;
-        height: 200px;
-       align-items: center;
-    }
-
-    
-    .submit-form{
-        color: white;
-        background-color: black;
-        opacity: 0.8;
-        border: none;
-    }
-
  /* ------------------------------------------------------------------------------FOOTER DE TOUTES LES PAGES------------------------------------------------------------------------------*/
  footer{
     background-color: #0c0c0cc2;

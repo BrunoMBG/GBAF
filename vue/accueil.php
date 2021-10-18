@@ -26,6 +26,7 @@ session_start();
                   
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
+
                      <p>
                         <?php echo $_SESSION['prenom']; ?>   <?php echo $_SESSION['nom']; ?>  
                      </p>
@@ -46,7 +47,7 @@ session_start();
       <section id="presentation">
        
             <h1>
-               GBAF (Groupement Banque Assurance Français) </br></br>
+               GBAF (Groupement Banque Assurance Français) 
             </h1>
            
             <h3>
@@ -56,6 +57,7 @@ session_start();
             <p>
                BNP Paribas / BPCE / Crédit Agricole / Crédit Mutuel-CIC / Société Générale / La Banque Postale.
             </p>
+            
             <p>
                Même s’il existe une forte concurrence entre ces entités, elles vont toutes travailler
                de la même façon pour gérer près de 80 millions de comptes sur le territoire
@@ -69,7 +71,7 @@ session_start();
             <img src="../images/intro.jpg"!> 
 
        
-    </section>
+      </section>
 
    <!------------------------------------------------------------------------------- PARTENAIRES -------------------------------------------------------------------------------->
       <section id="conteneur-acteurs"> 

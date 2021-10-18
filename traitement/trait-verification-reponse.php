@@ -22,7 +22,7 @@ if(isset($_POST['boutton-changer-mdp']))
         {
             // $recup_reponse = htmlspecialchars($_POST['recup_reponse']);
 
-            $req_recup_reponse = $bdd->prepare("SELECT * FORM membres WHERE reponse = ?");
+            $req_recup_reponse = $bdd->prepare("SELECT * FORM utilisateurs WHERE reponse = ?");
             $req_recup_reponse->execute(array($recup_reponse));
             
 
