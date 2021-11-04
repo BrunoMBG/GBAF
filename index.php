@@ -1,10 +1,6 @@
 <!-- <?php
  include 'traitement/trait-connexion-utilisateur.php';
  
-//  if (isset($_SESSION['id']))
-//  {
-//     header('Location: ./vue/accueil.php');
-//  }
 
 
 ?> -->
