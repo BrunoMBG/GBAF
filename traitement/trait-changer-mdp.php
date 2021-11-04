@@ -10,15 +10,9 @@
     
     if(isset($_POST['recup_mdp']) AND !empty($_POST['recup_mdp']) AND isset($_POST['recup_mdp2']) AND !empty($_POST['recup_mdp2']))
         {
-           
-            // $recup_reponse = htmlspecialchars($_POST['recup_reponse']);
-            $recup_mdp = sha1($_POST['recup_mdp']);
-            $recup_mdp2 = sha1($_POST['recup_mdp2']);
-            // $recup_mdp = password_hash($_POST['recup_mdp'], PASSWORD_DEFAULT);
-            // $recup_mdp2 = password_hash($_POST['recup_mdp2'], PASSWORD_DEFAULT);
-    
-       
-          
+            $recup_mdp = hash('sha256', $_POST['recup_mdp']);
+            $recup_mdp2 = hash('sha256', $_POST['recup_mdp2']);
+        
             //Changement de mot de passe
             if($recup_mdp == $recup_mdp2)
             {

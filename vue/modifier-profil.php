@@ -1,12 +1,8 @@
- <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
  <?php
 
      include '../traitement/trait-modification-profil.php';
      
-//      if (!isset($_SESSION['id']))
-// {
-//    header('Location: index.php');
-// }
+
 ?>
 
 <!DOCTYPE html>
@@ -22,15 +18,16 @@
         </head>
 
         <body>
- <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+
+ <!-- HEADER -->
 
               
                
         <header class="header">
                
-               <a href="accueil.php"><img src="../Images\logo_gbaf.png"></a>
+               <a href="accueil.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>
 
-            <div id="menu">
+            <nav id="menu">
             
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i> 
@@ -41,11 +38,12 @@
                </a>
 
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
-            </div>
+            </nav>
         </header>
 
                 
-        <!--------------------------------------------------------------------------------TITRE DE LA PAGE------------------------------------------------------------->
+  
+        <!--  TITRE DE LA PAGE -->
         <main class="page"> 
 
              <div id="page-modification"> 
@@ -56,14 +54,13 @@
                 
             </div>
 
-            <!--------------------------------------------------------------------------------FORMULAIRE DE MODIFICATION DE DONNÉES------------------------------------------------------------->
-            <form class="" method="POST" action="">
-               
+         
+            <!-- FORMULAIRE DE MODIFICATION DE DONNÉES -->
            
 
            <div id="conteneur-formulaire-modification">
 
-           <form method="POST" action="">
+           <form method="POST" action="#">
            <table  id="formulaire-modification">
         <tr>
                 <!-- MODIFICATION DU NOM -->
@@ -159,20 +156,17 @@
           
           
 
-            </form> 
+            
 
 </main>
             
- <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+
+ <!-- GESTION D'ERREUR -->
       
 
-      
-           
-             <!-- </div> 
-
-        </div> -->
         <?php if(isset($msg)) { echo $msg; } ?>
- <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------------->
+
+ <!-- FOOTER -->
         <footer>
             <a href="#">
         <p>

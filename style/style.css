@@ -73,21 +73,23 @@
     background-color: white;
 }
 
-#formulaire-connexion h1 {
+.formulaire-connexion h1 {
     margin: 15px 0 25px 0;
 }
 
-#formulaire-connexion p {
+.formulaire-connexion p {
     border-bottom: 1px red solid;
     padding-bottom: 15px;
     margin: 15px 0 15px 0;
 }
 
-#formulaire-connexion input {
+.formulaire-connexion input {
     margin:  auto; 
     text-align: center;
     padding: 15px;  
     border-radius: 24px;
+    /* background-color: red; */
+    margin-bottom: 20px;
 }
 
 #nom-utilisateur-connexion {
@@ -283,7 +285,7 @@
     font-size: 25px;
 }
 
-#boutton-formulaire-changer_mdp {
+.boutton-formulaire-changer_mdp {
     color: white;
     background-color: red;
     opacity: 0.8;
@@ -756,7 +758,7 @@ footer p {
         width: 90px;   
     }
     
-    #boutton-formulaire-changer_mdp {
+    .boutton-formulaire-changer_mdp {
         width: 120px;  
         white-space: normal;
     }
@@ -922,7 +924,7 @@ footer p {
             font-size: 20px;
         }
 
-        #formulaire-connexion input{
+         input{
             font-size: 20px;
         }
 
@@ -979,7 +981,7 @@ footer p {
         width: 400px;   
     }
     
-    #boutton-formulaire-changer_mdp {
+    .boutton-formulaire-changer_mdp {
         font-size: 20px;
     } 
     

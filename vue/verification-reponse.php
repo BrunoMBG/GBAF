@@ -1,12 +1,6 @@
 <?php
  include '../traitement/trait-verification-reponse.php'; //GESTION DE MOT DE PASSE OUBLIÉ
  
-
-
- if (!isset($_SESSION['id']))
-{
-   header('Location: ../index.php');
-}
 ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -20,23 +14,26 @@
         </head>
 
         <body>
-             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+            
+             <!-- HEADER -->
              <header class="header">
                 
-                <a href="../index.php"><img src="../Images\logo_gbaf.png"></a>
+                <a href="../index.php"><img src="../Images\logo_gbaf.png" alt="Logo du site"></a>
             </header>
 
-            <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
+            
+            <!-- FORMULAIRE INSCRIPTION -->
             <div  id="conteneur-formulaire-verification-reponse">
             <h2>Vérification de la réponse secrète</h2>
 
             <form  id="formulaire-verification-reponse" method="POST" action="">
             <table>
                
-         <!--------------------------------------------------------------------------------NOM D'UTILISATEUR-------------------------------------------------------------------------------->
+        
+         <!-- NOM D'UTILISATEUR -->
         <tr>
                 <td>
-                    <label class="label-verification-reponse" for="nom_utilisateur">Nom d'utilisateur :</label>
+                    <label class="label-verification-reponse" >Nom d'utilisateur :</label>
                 </td>
 
                 <td>
@@ -49,10 +46,10 @@
 
        
 
-        <!--------------------------------------------------------------------------------QUESTION SECRÈTE-------------------------------------------------------------------------------->
+        <!-- QUESTION SECRÈTE -->
         <tr>
                 <td>
-                    <label class="label-verification-reponse" for="question">Question secrète :</label>
+                    <label class="label-verification-reponse" >Question secrète :</label>
                 </td>
 
                 <td>
@@ -63,10 +60,11 @@
                 </td>
 
         </tr>
-         <!--------------------------------------------------------------------------------RÉPONSE A LA QUESTION SECRÈTE---------------------------------------------------------------------->
+      
+         <!-- RÉPONSE A LA QUESTION SECRÈTE -->
         <tr>
                 <td>
-                    <label class="label-verification-reponse" for="reponse">Réponse à la question secrète :</label>
+                    <label class="label-verification-reponse" >Réponse à la question secrète :</label>
                 </td>
 
                 <td>
@@ -75,10 +73,11 @@
         </tr> 
         
     
-     <!--------------------------------------------------------------------------------BOUTTON---------------------------------------------------------------------->
+    
+     <!-- BOUTTON- -->
         <tr>
             <td></td>
-            <td></br>
+            <td>
             <input type="submit" name="boutton-changer-mdp" value="Valider" id="boutton-formulaire-verification-reponse"/>
             </td>
 
@@ -87,7 +86,8 @@
        
             </form> </br>   
 
-     <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+     
+     <!-- GESTION D'ERREUR -->
             <?php
    if (isset($erreur))
    {       

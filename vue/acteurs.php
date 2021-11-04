@@ -1,11 +1,6 @@
 <?php 
 session_start();
 
- if (!isset($_SESSION['id']))
- {
-    header('Location: ../index.php');
- }
-
       // CONNEXION A LA BASE DE DONNÉES
             include '../traitement/connexion-base-donnees.php';
             
@@ -48,13 +43,14 @@ session_start();
 
 
 <body>
-     <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+    
+     <!-- HEADER  -->
  
    <header class="header">
                
                <a href="accueil.php"><img src="../Images\logo_gbaf.png"></a>
 
-            <div id="menu">
+            <nav id="menu">
             
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
@@ -65,12 +61,12 @@ session_start();
                   
                </a>
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
-            </div>
+            </nav>
    </header> 
-       <!--------------------------------------------------------------------------------PRESENTATION DES PARTENAIRES-------------------------------------------------------------------------------->
+      
+     <!--  PRESENTATION DES PARTENAIRES -->
    <main class="page">
    <div class="page-accueil-acteurs"> 
-         <!--------------------------------------------------------------------------------PRESENTATION DU PARTENAIRE---------------------------------------------------------------------------->
         
   <section class="conteneur-page-partenaires">
 
@@ -104,7 +100,8 @@ session_start();
     <?php
    $req->closeCursor(); 
    ?>
-       <!--------------------------------------------------------------------------------SECTION DE COMMENTAIRE--------------------------------------------------------------------------->   
+       
+       <!-- SECTION DE COMMENTAIRE -->
        
        
 
@@ -123,7 +120,9 @@ session_start();
                      <div class="nouveau_commentaire">
                         <a href="#aller_EnBas"> <input class="bouton_commentaires" type="button" value="Nouveau commentaire"> </a>
                      </div>
-                      <!--------------------------------------------------------------------------------LIKES ET DISLEKES------------------------------------------------------------------------->
+                 
+                      <!-- LIKES ET DISLEKES -->
+
                   <div class="likes">
                      <!-- Like -->
                       <a  href="../traitement/action.php?type=1&id=<?=  $_GET['partenaire'] ?>">
@@ -141,7 +140,9 @@ session_start();
 
 
                   <div>
-            <!--------------------------------------------------------------------------------AFFICHER LES COMMENTAIRES-------------------------------------------------------------------------->
+ 
+            <!-- AFFICHER LES COMMENTAIRES -->
+
                   <?php
 
                   $req = $bdd->prepare('SELECT prenom, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') 
@@ -201,7 +202,8 @@ session_start();
                }
             
                   ?>
-                   <!--------------------------------------------------------------------------------FORMULAIRE-------------------------------------------------------------------------->
+              
+                   <!-- FORMULAIRE -->
                   <form  id="aller_EnBas" class="conteneur-form-commentaire" method="POST"> 
 
                   <textarea   name="commentaire" placeholder="Votre commentaire" class="form-commentaire"></textarea> 
@@ -220,7 +222,7 @@ session_start();
     </div>
             </main>
 
-                <!--------------------------------------------------------------------------------FOOTER-------------------------------------------------------------------------->
+                <!-- FOOTER -->
     <footer>
             <a href="#">
         <p>

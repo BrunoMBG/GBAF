@@ -2,15 +2,7 @@
 
  include '../traitement/trait_verification_compte.php'; //GESTION DE LA FORGOT
 
-//  if (!isset($_SESSION['id']))
-// {
-//    header('Location: index.php');
-// }
- 
-// if(isset($_POST['recup_nomutilisateur']) AND empty($_POST['recup_nomutilisateur'])) {
-//     header ('Location: http://localhost/GBAF/index.php');
-//     // header ('Location: http://localhost/GBAF/page_partenaire.php?partenaire='.$getid);
-// }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,15 +19,17 @@
         </head>
 
         <body>
-             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+            
+             <!-- HEADER -->
             
              <header class="header">                 
-                  <a href="../index.php"><img src="../Images/logo_gbaf.png"></a>                               
+                  <a href="../index.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>                               
              </header>   
 
 
               
-        <!--------------------------------------------------------------------------------VERIFICATION QUE LE NOM D'UTILISATEUR EXISTE ---------------------------------------------------->
+       
+        <!-- VERIFICATION QUE LE NOM D'UTILISATEUR EXISTE  -->
         <div id="conteneur-formulaire-retrouvez-compte"> 
         <form id="formulaire-retrouvez-compte" method ="post" >
                 <h2>
@@ -50,11 +44,13 @@
 
             </div>
             
-        <input type="submit" name="recup_submit" value="Valider" id="boutton-verification-compte"/> </br></br>
+        <input type="submit" name="recup_submit" value="Valider" id="boutton-verification-compte"/> 
+    
        
+ -->
 
 
-<!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+<!-- GESTION D'ERREUR- -->
         <?php 
         if (isset($erreur))
         {       

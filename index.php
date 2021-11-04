@@ -1,12 +1,13 @@
- <!--------------------------------------------------------------------------------CONNEXION A LA BASE DE DONNEES-------------------------------------------------------------------------------->
-<?php
+<!-- <?php
  include 'traitement/trait-connexion-utilisateur.php';
  
- if (isset($_SESSION['id']))
- {
-    header('Location: ./vue/accueil.php');
- }
-?>
+//  if (isset($_SESSION['id']))
+//  {
+//     header('Location: ./vue/accueil.php');
+//  }
+
+
+?> -->
 
 <!DOCTYPE html>
         <html lang="fr">
@@ -21,30 +22,34 @@
         </head>
 
         <body>
- <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+
+ <!-- HEADER  -->
             <header class="header">                 
-                 <a href="index.php"><img src="Images/logo_gbaf.png"></a>
+                 <a href="index.php"><img src="Images/logo_gbaf.png" alt="Logo du site"></a>
             </header>   
             
 
- <!--------------------------------------------------------------------------------FORMULAIRE CONNEXION-------------------------------------------------------------------------------->
+ <!-- FORMULAIRE CONNEXION- -->
              <div id="conteneur-formulaire-connexion"> 
             
-            <form id="formulaire-connexion" method="POST" action="">
+            <form class="formulaire-connexion" method="POST" action="#">
                 <h1>
                     Connexion
                 </h1>
            
                 <!-- CHAMP POUR TAPER LE NOM D'UTILISATEUR -->
-            <input type ="text" name ="utilisateurconnexion" placeholder="Nom d'utilisateur" id="nom-utilisateur-connexion"/> </br></br>
+            <input type ="text" name ="utilisateurconnexion" placeholder="Nom d'utilisateur" id="nom-utilisateur-connexion"/> 
+        <!-- </br></br> -->
 
 
                 <!-- CHAMP POUR TAPER LE MOT DE PASSE -->
-           <input type ="password" name ="mdpconnexion" placeholder="Mot de passe" id="mdp-connexion"/> </br></br>
+           <input type ="password" name ="mdpconnexion" placeholder="Mot de passe" id="mdp-connexion"/> 
+        <!-- </br></br> -->
 
 
                 <!-- BOUTTON POUR SE COONECTER -->
-           <input type ="submit" name ="boutton_connexion" value="Se connecter" id="boutton-formulaire-connexion-connecter"/> </br>
+           <input type ="submit" name ="boutton_connexion" value="Se connecter" id="boutton-formulaire-connexion-connecter"/> 
+        <!-- </br> -->
            
           
                 <!-- RECUPERATION DE MOT DE PASSE -->
@@ -54,18 +59,27 @@
 
 
                 <!-- BOUTTON POUR CREER UN COMPTE -->
-          <a href="./vue/inscription.php"> <input type="button" value="Créer un compte" id="boutton-formulaire_connexion-creer-compte"></a>
+          <!-- <a href="./vue/inscription.php"> <input type="button" value="Créer un compte" id="boutton-formulaire_connexion-creer-compte"></a> -->
+          <!-- <a href="./vue/inscription.php"> <button type="button" id="boutton-formulaire_connexion-creer-compte"> Créer un compte </button> </a> -->
+       
           
 
             </form> 
+
+            <form class="formulaire-connexion" action="./vue/inscription.php">
+          <input id="boutton-formulaire_connexion-creer-compte" type="submit" value="Créer un compte">
             
- <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
-            <?php 
+          </form>
+     
+            
+
+ <!-- GESTION D'ERREUR- -->
+            <!-- <?php 
         if (isset($erreur))
         {       
         echo  '<font color="red">'.$erreur."</font>";
         }
-            ?>
+            ?> -->
 
       
            

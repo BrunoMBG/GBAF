@@ -2,11 +2,6 @@
 
 include '../traitement/trait-changer-mdp.php'; 
 
-// S'IL N'A PAS UNE SESSION DE, L'UTILISATEUR EST DIRIGÉ VERS LA PAGE DE CONNEXION
-// if (!isset($_SESSION['id']))
-// {
-//    header('Location: index.php');
-// }
 
 ?>
 
@@ -22,24 +17,28 @@ include '../traitement/trait-changer-mdp.php';
         </head>
 
         <body>
-             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+         
+             <!-- HEADER  -->
              <header class="header">  
-                  <a href="../index.php"><img src="../Images/logo_gbaf.png"></a>
+                  <a href="../index.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>
              </header>   
 
-            <!--------------------------------------------------------------------------------FORMULAIRE POUR CHANGER LE MOT DE PASSE-------------------------------------------------------------->
+            
+            
+            <!-- FORMULAIRE POUR CHANGER LE MOT DE PASSE -->
 
             <div id="conteneur-formulaire-changer-mdp">
                 <h2>Choisissez votre nouveau mot de passe</h2>
 
-            <form id="formulaire-changer-mdp" method="POST" action="">
+            <form id="formulaire-changer-mdp" method="POST" action="#">
 
             <table>
         
-         <!--------------------------------------------------------------------------------NOUVEAU MOT DE PASSE---------------------------------------------------------------------->
+       
+         <!-- NOUVEAU MOT DE PASSE -->
         <tr>
                 <td>
-                    <label class="label-changer-mdp" for="recuperation-mdp"> Nouveau Mot de passe :</label>
+                    <label class="label-changer-mdp" for="mdp"> Nouveau Mot de passe :</label>
                 </td>
 
                 <td>
@@ -48,10 +47,11 @@ include '../traitement/trait-changer-mdp.php';
 
         </tr>
 
-        <!--------------------------------------------------------------------------------CONFIRMATION DU MOT DE PASSE---------------------------------------------------------------------->
+    
+        <!-- CONFIRMATION DU MOT DE PASSE -->
         <tr>
                 <td>
-                    <label class="label-changer-mdp" for="recuperation-mdp2">Confirmation du mot de passe :</label>
+                    <label class="label-changer-mdp" for="mdp2">Confirmation du mot de passe :</label>
                 </td>
 
                 <td>
@@ -60,12 +60,13 @@ include '../traitement/trait-changer-mdp.php';
 
         </tr> 
 
-     <!--------------------------------------------------------------------------------BOUTTON---------------------------------------------------------------------->
+   
+     <!-- BOUTTON -->
         <tr>
             <td></td>
 
             <td>
-                    <input type="submit" name="boutton-changer-mdp" value="Changer le mot de passe" id="boutton-formulaire-changer_mdp"/>
+                    <input type="submit" name="boutton-changer-mdp" value="Changer le mot de passe" class="boutton-formulaire-changer_mdp"/>
             </td>
 
         </tr>
@@ -74,12 +75,15 @@ include '../traitement/trait-changer-mdp.php';
         <!-- BOUTON QUI APPARAIT APRES AVOIR CHANGER LE MOT DE PASSE -->
         <?php  if(isset($message))
    {
-       echo '<a href="../index.php">   <input type=button value="Se connectar" id="boutton-formulaire-changer_mdp" /> </a>';
+       echo '<a href="../index.php">   <input type= "button" value="Se connectar" class="boutton-formulaire-changer_mdp" /> </a>';
    }    ?> 
+
+  
   
             </form>   
 
-     <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+   
+     <!-- GESTION D'ERREUR -->
         <?php
    if (isset($erreur))
    {       

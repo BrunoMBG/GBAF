@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-?>
+?> 
 
 
 <!DOCTYPE html>
@@ -16,13 +16,14 @@ session_start();
 
    <body>
       
-   <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+
+   <!-- HEADER -->
 
          <header class="header">
                
-               <a href="accueil.php"><img src="../Images\logo_gbaf.png"></a>
+               <a href="accueil.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>
 
-            <div id="menu">
+            <nav id="menu">
                   
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
@@ -36,11 +37,12 @@ session_start();
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
                </div>
 
-            </div>
+            </nav>
          </header>
 
 
-  <!-------------------------------------------------------------------------------PRESENTATION -------------------------------------------------------------------------------->
+
+  <!-- PRESENTATION  -->
 
   <main class="page">
      <div class="page-accueil-acteurs"> 
@@ -68,12 +70,13 @@ session_start();
                pouvoirs publics.
             </p>
             
-            <img src="../images/intro.jpg"!> 
+            <img src="../images/intro.jpg" alt="Photo de presentation GBAF"> 
 
        
       </section>
 
-   <!------------------------------------------------------------------------------- PARTENAIRES -------------------------------------------------------------------------------->
+  
+   <!-- PARTENAIRES  -->
       <section id="conteneur-acteurs"> 
 
          <h2>
@@ -136,15 +139,16 @@ session_start();
          </article>
 
 
-         <?php
+         <!-- <?php
                }   // FIN DE LA BOUCLE PARTENAIRES
              $req->closeCursor();
-         ?>
+         ?> -->
       </section>
      </div>
  </main>
 
-   <!-------------------------------------------------------------------------------FOOTER -------------------------------------------------------------------------------->
+
+   <!-- FOOTER -->
      
       <footer>
             <a href="#">

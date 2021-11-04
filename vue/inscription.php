@@ -15,18 +15,20 @@
         </head>
 
         <body>
-             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+            
+             <!-- HEADER  -->
             <header class="header">                 
-                 <a href="../index.php"><img src="../Images/logo_gbaf.png"></a>     
+                 <a href="../index.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>     
             </header>   
             
  
 
-            <!--------------------------------------------------------------------------------FORMULAIRE INSCRIPTION-------------------------------------------------------------------------------->
+            
+            <!-- FORMULAIRE INSCRIPTION -->
             <div id="conteneur-formulaire-inscription">
             <h1>Inscription</h1>
 
-            <form id="formulaire-inscription" method="POST" action="">
+            <form id="formulaire-inscription" method="POST" action="#">
             <table>
 
             <!-- CHAMP NOM -->
@@ -128,7 +130,7 @@
              <!-- BOUTON -->
         <tr>
             <td></td>
-            <td>    </br>
+            <td>    
                     <input type="submit" name="boutton_inscription" value="Je m'inscris" id="boutton-formulaire-inscription"/>
             </td>
 
@@ -137,7 +139,8 @@
        
             </form>
             
-         <!--------------------------------------------------------------------------------GESTION D'ERREUR-------------------------------------------------------------------------------->
+       
+         <!-- GESTION D'ERREUR -->
             <?php
    if (isset($erreur))
    {       

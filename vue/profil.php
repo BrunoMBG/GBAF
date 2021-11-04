@@ -1,10 +1,6 @@
 <?php
 include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
 
-// if (!isset($_SESSION['id']))
-// {
-//    header('Location: index.php');
-// }
 
 ?>
 
@@ -22,13 +18,14 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
         </head>
 
         <body>
-             <!--------------------------------------------------------------------------------HEADER -------------------------------------------------------------------------------->
+        
+             <!-- HEADER -->
             
     <header class="header">
                
-               <a href="accueil.php"><img src="../Images\logo_gbaf.png"></a>
+               <a href="accueil.php"><img src="../Images/logo_gbaf.png" alt="Logo du site"></a>
 
-            <div id="menu">
+            <nav id="menu">
             
                <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">
                   <i class="fas fa-user-alt icone-profil"></i>  
@@ -39,11 +36,12 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
                </a>
 
                <a href="../traitement/deconnexion.php"><i class="fas fa-sign-out-alt icone-deconnexion"></i></a>
-            </div>
+            </nav>
     </header>
 
               
-            <!--------------------------------------------------------------------------------PROFIL -------------------------------------------------------------------------------->
+       
+            <!-- PROFIL -->
             
   <main class="page"> 
             <div id="page-modification"> 
@@ -94,13 +92,20 @@ include '../traitement/trait-profil.php'; //GESTION DE LA PAGE DE PROFIL
                
             
             </div>
-             <!--------------------------------------------------------------------------------BUTTON POUR MODIFIER LE PROFIL ----------------------------------------------------------------->
+      
+             <!-- BUTTON POUR MODIFIER LE PROFIL  -->
             <div id="button-profil">
-                <a href="modifier-profil.php"> <input button id="button-page-de-profil" type="button" value="Modifier"></a>          
-            </div>
+                <!-- <a href="modifier-profil.php"> <input type=button id="button-page-de-profil" type="button" value="Modifier"></a>           -->
+                <form action="modifier-profil.php">
+                    <button id="button-page-de-profil"> Modifier </button>
+            </form>
             
-            <!--------------------------------------------------------------------------------FOOTER ----------------------------------------------------------------->
+            </div>
+         
+            
+          
   </main>
+    <!-- FOOTER  -->
     <footer>
             <a href="#">
         <p>
